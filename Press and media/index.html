@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="http://fonts.cdnfonts.com/css/cream-candy" rel="stylesheet">
+                
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Press and Media</title>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow Condensed", sans-serif;
+}
+.banner__box {
+  width: 95%;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.banner__box > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.box__content {
+  background-color: black;
+  color: white;
+  padding: 3rem 1rem 2rem 2rem;
+}
+.box__content p {
+  font-size: 28px;
+}
+.box__content li {
+  list-style: none;
+  font-size: 22px;
+}
+@media only screen and (max-width: 600px) {
+  .banner__box {
+    grid-template-columns: 1fr;
+  }
+}
+/* //////////////////////////////// */
+.form__heading {
+  width: 70%;
+  margin: 3rem auto;
+  text-align: center;
+}
+.form__heading > h1 {
+  font-family: "Cream Candy", sans-serif;
+  font-size: 10rem;
+}
+.form__section input {
+  border-radius: 10px;
+  margin-bottom: 10px;  
+  border-color: #acafb3;
+
+}
+
+.form__section textarea {
+  border-radius: 10px;
+  border-color: #acafb3;
+  resize: none;
+}
+
+.form-control:focus {
+  border: 1px solid grey;
+  border-color: rgb(153, 153, 153);
+  box-shadow: none;
+}
+
+.button {
+  width: 350px;
+  font-size: 22px;
+  padding: 3px;
+  margin: 2rem auto;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(24, 24, 24, 0.911);
+  outline: none;
+  color: white;
+  box-shadow: 2px 1px 11px 0px rgb(165 164 164 / 48%);
+  transition: all 0.5s;
+}
+.button:hover {
+  background-color: black;
+}
+@media only screen and (max-width: 1060px) {
+  .form__heading > h1 {
+    font-size: 8rem;
+  }
+}
+@media only screen and (max-width: 810px) {
+  .form__heading > h1 {
+    font-size: 5rem;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .form__heading > h1 {
+    font-size: 4rem;
+  }
+  .button {
+    width: 300px;
+    font-size: 20px;
+    padding: 5px;
+    margin: 1rem auto;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .form__heading > h1 {
+    font-size: 3rem;
+  }
+  .button {
+    width: 255px;
+  }
+}
+
+/* //////////////////////////////// */
+
+.getintouch {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 10rem;
+}
+.getintouch input {
+  margin: 4rem 0rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  box-shadow: 0px 4px 14px 1px rgb(0 0 0 / 17%);
+  border-radius: 37px;
+  padding-left: 15px;
+}
+.getintouch a {
+  text-decoration: none;
+  color: black;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div class="banner__box">
+      <img src="./img/vanilla-bear-films-JEwNQerg3Hs-unsplash.jpg" alt="">
+      <div class="box__content">
+       <p>SpotOn Apparel is looking for any Press/Media association while we now prepare ourselves to serve this Sports Loving Nation on a massive scale with a whole Bouquet of other services and products.</p>
+       <p>Please reach out to us Here</p>
+       <br>
+       <p>Our Verticals</p>
+       <p>
+         <ul>
+           <li>- Custom Sports Apparel</li>
+           <li>- Cutomizes Designer-wear Fashion Apparel</li>
+           <li>- Medics and Pharma Services</li>
+           <li>- IT Services Provider</li>
+         </ul>
+       </p>
+      </div>
+    </div>
+
+<div class="form__heading">
+  <h1>Press and Media</h1>
+</div>
+    <div class="form__section form-group w-75 m-auto">
+      <form action="" method="POST">
+        <label for="name" class="form-label">Your Full Name *</label>
+        <input
+          type="name"
+          id="name"
+          name="name"
+          class="form-control"
+     
+        />
+        <label for="email" class="form-label">Your Email Address *</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control"
+  
+        />
+        <label for="number" class="form-label">Your Contact Number *</label>
+        <input
+          type="tel"
+          id="number"
+          name="number"
+          class="form-control"
+        />
+        <label for="message" class="form-label">Message</label>
+        <textarea
+          type="text"
+          id="message"
+          name="message"
+          class="form-control"
+          rows="3"
+        > </textarea> 
+
+        <div class="text-center mt-5">
+          <button type="submit" class=" button">
+            Send
+          </button>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="getintouch">
+      <h1>GET IN TOUCH</h1>
+      <h3>
+        Sign up for the news about our latest arrivals and get an exclusive
+        early access shopping. join 60,000+ subscribers and get a new discount
+        coupon on every Saturday
+      </h3>
+      <input type="email" placeholder="Enter your email here" />
+      <h2> <a href="#"> Mail Us</a></h2>
+    </div>
+
+  </body>
+</html>

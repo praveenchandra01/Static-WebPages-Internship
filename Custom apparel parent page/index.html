@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap" rel="stylesheet">
+    
+    <title>Custom apparel parent page</title>
+
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        font-family: "Barlow Condensed", sans-serif;
+        box-sizing: border-box;
+        }
+        .img__container {
+        width: 90%;
+        /* max-height: 650px; */
+        margin: 3rem auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        }
+
+        .img__container::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.61);
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        opacity: 0.5;
+        z-index: 1;
+        }
+        .img__container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+        .img__container .heading {
+        width: 80%;
+        height: 50%;
+        margin: auto;
+        text-align: center;
+        color: white;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        }
+        .heading > h1 {
+        font-size: 6vw;
+        }
+        .heading > h4 {
+        text-align: center;
+        width: 60%;
+        font-size: 2.2vw;
+        margin: auto;
+        font-weight: 200;
+        }
+        .top__btn {
+        width: 25vw;
+         margin: auto;
+        border: none;
+         padding: 1%;
+         font-size: 1.5vw;
+        cursor: pointer;
+        outline: none;
+        background: Black;
+        color: white;
+        transition: all 0.2s ease-in-out;
+    }
+    .top__btn:hover {
+         background-color: rgb(233, 233, 233);
+        color: black;
+    }
+        @media only screen and (max-width: 550px) {
+         .heading > h4 {
+         font-size: 2.5vw;
+        }
+    }
+
+        /* ////////////////////////////////////////////// */
+
+        .image__grid {
+        width: 90%;
+        margin: 2rem auto;
+        text-align: center;
+        }
+        .image__grid h1 {
+        font-size: 3rem;
+        margin: 2rem;
+        }
+
+        .grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+        .grid__img {
+        height: 350px;
+        width: 350px;
+        margin: 2rem 1rem;
+        }
+        .main__img img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 15px;
+        }
+        .grid__img > a {
+        text-decoration: none;
+        color: black;
+        /* padding: 1rem; */
+        /* font-size: 15px; */
+        }
+
+        /* //////////////////////////// */
+
+        .logo {
+        width: 80%;
+        margin: auto;
+        padding: 2rem;
+        /* position: relative; */
+        }
+        .logo__btn {
+        width: 300px;
+        margin: 3rem auto;
+        padding: 1rem 0rem;
+        }
+        .logo__btn button {
+        font-size: 20px;
+        cursor: pointer;
+        outline: none;
+        background: rgb(231, 231, 231);
+        color: black;
+        font-weight: bold;
+        border: none;
+        transition: all 0.2s ease-in-out;
+        border: 1px solid burlywood;
+        }
+        .logo__btn button:hover {
+        background-color: rgb(255, 226, 189);
+        }
+
+        .icons {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        }
+        .icon {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 2rem 1rem;
+        /* padding-left: 2rem; */
+        }
+        #second {
+        margin-right: 0;
+        }
+        #third {
+        margin-left: 0;
+        }
+        .icon img {
+        filter: grayscale(13);
+        }
+
+        .icon h1 {
+        font-weight: 400;
+        font-size: 45px;
+        margin-top: 1rem;
+        }
+
+        .icon p {
+        width: 77%;
+        text-align: center;
+        }
+
+        @media only screen and (max-width: 580px) {
+        .logo__btn {
+            width: 200px;
+        }
+        }
+
+        /* /////////////////////////////// */
+
+        .cards {
+        width: 80%;
+        margin: auto;
+        height: auto;
+        }
+
+        .card {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        border: 1px solid rgb(189, 189, 189);
+        margin: 5rem 0;
+        /* box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 17%); */
+        }
+        .card img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        }
+
+        .card__content {
+        text-align: left;
+        width: 69%;
+        /* margin: auto; */
+        margin: 5rem 3rem 1rem 5rem;
+        }
+        .card__content h1 {
+        font-size: 75px;
+        font-weight: 100;
+        color: rgb(99, 99, 99);
+        }
+        .card__content h5 {
+        font-size: 25px;
+        font-weight: 100;
+        color: rgb(99, 99, 99);
+        }
+
+        #second__card {
+        grid-template-columns: 2fr 1fr;
+        }
+
+        @media only screen and (max-width: 880px) {
+        .card__content {
+            margin: 2rem 4rem;
+        }
+        }
+        @media only screen and (max-width: 650px) {
+        .card {
+            grid-template-columns: 1fr;
+        }
+        #second__card {
+            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        }
+        @media only screen and (max-width: 480px) {
+        .card__content {
+            margin: 2rem;
+        }
+        .card__content h1 {
+            font-size: 50px;
+        }
+        }
+
+        /* //////////////////////////////////////////// */
+
+        .bottom {
+        text-align: center;
+        width: 80%;
+        margin: auto;
+        margin-bottom: 3rem;
+        }
+        .bottom h2 {
+        width: 50%;
+        margin: auto;
+        color: rgb(109, 109, 109);
+        }
+        .bottom button {
+        margin-top: 10px;
+        border: 1px solid rgb(182, 182, 182);
+        padding: 10px 70px;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        outline: none;
+        background: white;
+        color: black;
+        font-weight: bold;
+        transition: all 0.2s ease-in-out;
+        border: 1px solid rgb(209, 209, 209);
+        }
+        .bottom button:hover {
+        background-color: rgb(233, 233, 233);
+        }
+        /* //////////////////////////////////////// */
+
+        .getintouch {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 10rem;
+        }
+        .getintouch input {
+        margin: 4rem 0rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        height: 50px;
+        border: none;
+        outline: none;
+        box-shadow: 0px 4px 14px 1px rgb(0 0 0 / 17%);
+        border-radius: 37px;
+        padding-left: 15px;
+        }
+        .getintouch a {
+        text-decoration: none;
+        color: black;
+        }
+
+    </style>
+    <!-- <style>
+        * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Barlow Condensed', sans-serif;
+        box-sizing: border-box;
+        }
+        .img__container{
+            width: 90%;
+            margin: 3rem auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .img__container img{
+            width: 100%;
+            object-fit: contain;
+        }
+        .img__container .heading{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        color: white;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+        .heading > h1{
+            font-size: 5rem;
+        }
+        .heading > h4{
+        text-align: center;
+        width: 60%;
+        font-size: 22px;
+        margin: auto;
+            font-weight: 200;
+            padding-bottom: 70px;
+        }
+        .top__btn{
+        margin-top: 50px;
+        border: none;
+        padding: 10px 50px;
+        font-size: 20px;
+        cursor: pointer;
+        outline: none;
+        background: white;
+        color: black;
+        font-weight: bold;
+        transition: all 0.2s ease-in-out;
+        }
+        .top__btn:hover{
+        background-color: rgb(255, 226, 189);
+        }
+
+        @media only screen and (max-width:1270px) {
+        .heading > h1{
+            font-size: 3rem;
+        }
+        .heading > h4{
+            font-weight: 200;
+            padding-bottom: 10px;
+            }
+        }
+        @media only screen and (max-width:780px) {
+        .heading > h1{
+            font-size: 2rem;
+        }
+        .heading > h4{
+            font-weight: 100;
+            }
+            .top__btn{
+            margin-top: 10px;
+            }
+        }
+        @media only screen and (max-width:570px) {
+        .img__container{
+        width: 98%;
+        }
+        .heading > h1{
+            font-size: 23px;
+        }
+        .heading > h4{
+            text-align: center;
+            width: 80%;
+            margin: auto;
+            font-size: small;
+            font-weight: 200;
+            }
+            .top__btn{
+            padding: 9px 15px;
+            font-size: 10px;
+            margin-top: 0px;
+            }
+        }
+        @media only screen and (max-width:380px) {
+        .heading > h1{
+            font-size: 18px;
+        }
+        .heading > h4{
+            text-align: center;
+            font-size: 10px;
+            font-weight: 200;
+            padding-bottom: 5px;
+            }
+        .top__btn{
+            padding: 3px 10px;
+        }
+        }
+
+        /* ////////////////////////////////////////////// */
+
+
+        .image__grid{
+            width: 90%;
+            margin: 2rem auto;
+            text-align: center;
+        }
+        .image__grid h1{
+            font-size: 3rem;
+            margin: 2rem;
+        }
+
+        .grid{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+        .grid__img{
+            height: 350px;
+            width: 350px;
+            margin: 2rem 1rem;
+        
+        }
+        .main__img img{
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+        } 
+        .grid__img > a{
+            text-decoration: none;
+            color: black;
+            /* padding: 1rem; */
+            /* font-size: 15px; */
+        }
+
+        /* //////////////////////////// */
+
+        .logo{
+            width: 80%;
+            margin: auto;
+            padding: 2rem;
+            /* position: relative; */
+        }
+        .logo__btn{
+            width: 300px;
+            margin: 3rem auto;
+            padding: 1rem 0rem;   
+        }
+        .logo__btn button{
+            font-size: 20px;
+            cursor: pointer;
+            outline: none;
+            background: rgb(231, 231, 231);
+            color: black;
+            font-weight: bold;
+            border: none;
+            transition: all 0.2s ease-in-out;
+            border: 1px solid burlywood;
+        }
+        .logo__btn button:hover{
+            background-color: rgb(255, 226, 189)
+        }
+
+        .icons{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            
+        }
+        .icon{
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 2rem 1rem;
+            /* padding-left: 2rem; */
+        }
+        #second{
+            margin-right: 0;
+        }
+        #third{
+            margin-left: 0;
+        }
+        .icon img{
+            filter: grayscale(13);
+        }
+
+        .icon h1{
+            font-weight: 400;
+            font-size: 45px;
+            margin-top: 1rem;
+        }
+
+        .icon p{
+            width: 77%;
+            text-align: center;
+        }
+
+
+        @media only screen and (max-width:580px) {
+        .logo__btn{
+        width: 200px;
+        }
+        }
+        
+        /* /////////////////////////////// */
+
+
+        .cards{
+        width: 80%;
+        margin: auto;
+        height: auto;
+        }
+
+        .card{
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 2fr ;
+        border: 1px solid rgb(189, 189, 189);
+        margin: 5rem 0;
+        /* box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 17%); */
+        }
+        .card img{
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        }
+
+        .card__content{
+        text-align: left;
+        width: 69%;
+        /* margin: auto; */
+        margin: 5rem 3rem 1rem 5rem;
+        }
+        .card__content  h1{
+        font-size: 75px;
+        font-weight: 100;
+        color: rgb(99, 99, 99);
+        }
+        .card__content  h5{
+        font-size: 25px;
+        font-weight: 100;
+        color: rgb(99, 99, 99);
+        }
+
+
+
+        #second__card{
+        grid-template-columns: 2fr 1fr;
+        }
+
+
+        @media only screen and (max-width:880px) {
+        .card__content{
+        margin: 2rem 4rem;
+        }
+        }
+        @media only screen and (max-width:650px) {
+        .card{
+        grid-template-columns: 1fr;
+        }
+        #second__card{
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction:column-reverse ;
+        }
+        }
+        @media only screen and (max-width:480px) {
+        .card__content{
+        margin: 2rem;
+        }
+        .card__content  h1{
+        font-size: 50px;
+        }
+        }
+
+        /* //////////////////////////////////////////// */
+
+        .bottom{
+        text-align: center;
+        width: 80%;
+        margin: auto;
+        margin-bottom: 3rem;
+        }
+        .bottom h2{
+        width: 50%;
+        margin: auto;
+        color: rgb(109, 109, 109);
+        }
+        .bottom button{
+        margin-top: 10px;
+        border: 1px solid rgb(182, 182, 182);
+        padding: 10px 70px;
+        }
+        .bottom button:hover{
+        background-color: rgb(192, 194, 196);
+        }
+        /* //////////////////////////////////////// */
+
+        .getintouch {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 10rem;
+        }
+        .getintouch input {
+        margin: 4rem 0rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        height: 50px;
+        border: none;
+        outline: none;
+        box-shadow: 0px 4px 14px 1px rgb(0 0 0 / 17%);
+        border-radius: 37px;
+        padding-left: 15px;
+        }
+        .getintouch a{
+        text-decoration: none;
+        color: black;
+        }
+    </style> -->
+   
+</head>
+<body>
+    <div class="img__container">
+        <img src="./img/karsten-winegeart-4QfPff4QwwI-unsplash.jpg" alt="main">
+        <div class="heading">
+            <h1>CUSTOMIZE APPAREL</h1>
+            <h4>Get the highest quality custom apparel on lowest prices and lowest turnaround times</h4>
+            <button class="top__btn">Get a free Design</button>
+        </div>
+    </div>
+
+    <div class="image__grid">
+        <h1>Select a Category</h1>
+        <div class="grid">
+            
+            <div class="grid__img  ">
+                <a href="#">
+                    <div class="main__img ">
+                        <img src="./img/alexHaneyTcnyk8ly1jeUnsplash.png" alt="">
+                    </div>
+                    <h2>Bagpacks and Bags</h2>
+                </a>
+            </div>
+            <div class="grid__img  ">
+                <a href="#">
+                    <div class="main__img ">
+                        <img src="./img/karsten-winegeart-4QfPff4QwwI-unsplash (1).jpg" alt="">
+                    </div>
+                    <h2>Beanies</h2>
+                </a>
+            </div>
+            <div class="grid__img  ">
+                <a href="#">
+                    <div class="main__img ">
+                        <img src="./img/karsten-winegeart-T1n8DG_3jhE-unsplash.jpg" alt="">
+                    </div>
+                    <h2>Bomber jackets</h2>
+                </a>
+            </div>
+            <div class="grid__img  ">
+                <a href="#">
+                    <div class="main__img ">
+                        <img src="./img/joshua-coleman-_yVRLC75Ma8-unsplash.jpg" alt="">
+                    </div>
+                    <h2>Caps</h2>
+                </a>
+            </div>
+            <div class="grid__img  ">
+                <a href="#">
+                    <div class="main__img ">
+                        <img src="./img/alicia-petresc-BciCcl8tjVU-unsplash.jpg" alt="">
+                    </div>
+                    <h2>Pants</h2>
+                </a>
+            </div>
+            <div class="grid__img  ">
+                <a href="#">
+                    <div class="main__img ">
+                        <img src="./img/kartini-maxson-mxIIfYb6S-w-unsplash.jpg" alt="">
+                    </div>
+                    <h2>Varsity Jackets</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="logo">
+        <div class="logo__btn">
+            <button class="logo__btn"> Get a free design </button>
+        </div>
+        <div class="icons">
+            <div class="icon" id="first">
+                <img src="./img/Icon ionic-md-pricetags.png" alt="">
+                <h1>Lowest Prices</h1>
+                <p>We give our customers the Best price</p>
+            </div>
+            <div class="icon" id="second">
+                <img src="./img/Icon ionic-md-speedometer.png" alt="">
+                <h1>Turn around</h1>
+                <p>With us you get hte fastest turn around</p>
+            </div>
+            <div class="icon" id="third">
+                <img src="./img/Icon material-hearing.png" alt="">
+                <h1>Customization</h1>
+                <p>We liten to your needs and customise emphatetically</p>
+            </div>
+        </div>
+    </div>
+    <div class="cards">
+
+        <!-- First card -->
+        <div class="card " id="first__card">
+            <img src="./img/vinceFlemingAzvpxrydijkUnsplash.png" alt="">
+            <div class="card__content">
+                <h1>Speedy Delivery</h1>
+                <h5>As if our delivery speed wasn't fast already, we now offer rush shipping to get you your uniforms even sooner.</h5>
+            </div>
+        </div>
+
+        <!-- second card -->
+        <div class="card" id="second__card">
+            <div class="card__content">
+                <h1>Durable & Comfortable</h1>
+                <h5>We only use the lightest weight,
+                    highest quality materials to make the most confortable and longest lasting apparel on the market.</h5>
+            </div>
+            <img src="./img/rubenLeijaJyknlTvvaUnsplash.png" alt="">
+        </div>
+
+<!-- third card -->
+        <div class="card" id="third__card">
+
+            <img src="./img/jonathanBorbaYf1segai84oUnsplash.png" alt="">
+            <div class="card__content">
+                <h1>Sturdy Quality</h1>
+                <h5>We only use the lightest weight,
+                    highest quality materials to make the most confortable and longest lasting apparel on the market.</h5>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="bottom">
+        <h2>Find out why we are trusted by the best sports organisations in the game </h1>
+        <button >Get a free quote</button>
+    </div>
+
+    <!-- GET IN TOUCH -->
+    <div class="getintouch">
+        <h1>GET IN TOUCH</h1>
+        <h3>
+          Sign up for the news about our latest arrivals and get an exclusive
+          early access shopping. join 60,000+ subscribers and get a new discount
+          coupon on every Saturday
+        </h3>
+        <input type="email" placeholder="Enter your email here" />
+        <h2> <a href="#"> Mail Us</a></h2>
+      </div>
+
+</body>
+</html>

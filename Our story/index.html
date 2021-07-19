@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <title>Our Story</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+
+      .img__container {
+        width: 90%;
+        margin: 3rem auto;
+        position: relative;
+      }
+      .img__container img {
+        width: 100%;
+        object-fit: cover;
+      }
+      .heading {
+        position: absolute;
+        top: 30%;
+        left: 24%;
+        transform: translate(-50%, -50%);
+      }
+      @media only screen and (max-width: 1000px) {
+        .heading {
+          /* font-size: 1rem; */
+          top: 30%;
+          left: 28%;
+        }
+      }
+
+      @media only screen and (max-width: 680px) {
+        .heading {
+          font-size: 1rem;
+          top: 28%;
+          left: 26%;
+        }
+      }
+      @media only screen and (max-width: 420px) {
+        .heading {
+          font-size: 15px;
+          top: 28%;
+          left: 31%;
+        }
+      }
+
+      /* ////////////////////////////// */
+      .content__background {
+        position: relative;
+        width: 100%;
+      }
+      .content__background > img {
+        position: absolute;
+        z-index: -2;
+        width: 100%;
+        /* background-repeat: no-repeat; */
+      }
+      .content__section {
+        width: 90%;
+        margin: auto;
+      }
+      .content__section h1 {
+        font-size: 4rem;
+      }
+      .story__box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 2rem 0;
+      }
+      .story__box > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .text {
+        padding: 15px;
+      }
+      .text > p {
+        padding: 5px;
+        margin-bottom: 5px;
+      }
+      #text2 {
+        padding-left: 25px;
+      }
+      #text3 {
+        /* padding-left: 15px; */
+        line-height: 2rem;
+      }
+
+      @media only screen and (max-width: 900px) {
+        .story__box {
+          grid-template-columns: 1fr;
+        }
+        #box_2 {
+          display: flex;
+          flex-direction: column-reverse;
+          flex-wrap: wrap;
+        }
+        #text3 {
+          line-height: normal;
+        }
+      }
+      @media only screen and (max-width: 500px) {
+        .content__section h1 {
+          font-size: 2.5rem;
+          text-align: center;
+        }
+      }
+
+      /* //////////////////////////////////// */
+      .middle__section {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+      }
+      .middle__section > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .middle__content {
+        background-color: black;
+        color: white;
+      }
+      .middle__content .list__items > h1 {
+        padding: 1rem 0;
+        font-size: 50px;
+        font-weight: 100;
+      }
+      .list__items {
+        width: 90%;
+        margin: 2rem auto;
+      }
+      .middle__content h5 > ol {
+        padding: 0rem 1rem;
+        padding-left: 3rem;
+        font-weight: 100;
+      }
+      .middle__content h5 > ol > li {
+        padding: 5px 0;
+      }
+      @media only screen and (max-width: 800px) {
+        .middle__section {
+          grid-template-columns: 1fr;
+        }
+        .middle__section > img {
+          height: 500px;
+        }
+        #right__img {
+          display: none;
+        }
+      }
+      /* ////////////////////////////// */
+      .bottom__img {
+        width: 100%;
+        height: 100%;
+      }
+      .bottom__img > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* ///////////////////////////// */
+
+      .bottom {
+        width: 90%;
+        margin: 5rem auto;
+        text-align: center;
+      }
+      .buttons {
+        width: 100%;
+        margin: 3rem auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .butn {
+        width: 300px;
+        margin: 1rem 2rem;
+        padding: 10px 70px;
+        border: 1px solid black;
+        cursor: pointer;
+        background-color: rgba(24, 24, 24, 0.973);
+        color: white;
+        transition: all 0.5s;
+      }
+      .butn:hover {
+        background-color: rgb(0, 0, 0);
+      }
+      .butn:focus {
+        outline: none;
+      }
+      #btn_2 {
+        outline: none;
+        background-color: white;
+        color: black;
+        border: 2px solid rgb(126, 126, 126);
+      }
+      #btn_2:hover {
+        background-color: rgb(202, 202, 202);
+      }
+
+      @media only screen and (max-width: 1215px) {
+        .buttons {
+          flex-direction: column;
+        }
+        .butn {
+          width: 80%;
+          margin: 1rem auto;
+          padding: 10px 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img__container">
+      <img src="./img/pexels-suzy-hazelwood-1995842.jpg" alt="" />
+
+      <h3 class="heading">SPOTON APPAREL</h3>
+    </div>
+
+    <div class="content__background">
+      <img class="background__img" src="./img/Group 34.png" alt="background" />
+
+      <div class="content__section">
+        <h1>THIS IS OUR STORY</h1>
+        <!-- first_box -->
+        <div class="story__box" id="box_1">
+          <div class="text" id="text1">
+            <p>
+              SpotOn Apparel is story of two resilient women (Founders of SpotOn
+              Apparel) who decided to put an end to the unfair trade practices
+              having been at the receiving end of such practices where they kept
+              waiting for their ordered Kid`s customized sports apparel having
+              finally received them long after the tournament was over and
+              finding the received goods to be of an inferior quality with
+              multiple design / customization errors.
+            </p>
+
+            <p>
+              Further “Research” led them to unearth millions of fellow
+              Americans being taken for a ride by such, much publicized and
+              advertised companies (a few even claimed to be “Revolutionizing
+              sports” LMAO!) Many companies were found to be “Quick” in taking
+              payments with some really awesome sales services which just
+              vanished the moment a customer paid. The customers were left at
+              their own mercies and had no alternative then to either get their
+              apparel locally or just sit on the side-lines since they didn’t
+              have uniforms to play in. After closely watching customers finding
+              local guys for last minute fix, complaining about incorrect
+              colours, poor designs, wrong sizes, lack of after sales support
+              and most importantly delay in delivery, The Founders then took it
+              upon themselves to put an end to this long going adversity.
+            </p>
+          </div>
+          <img src="./img/pexels-george-milton-6954031.jpg" alt="img" />
+        </div>
+        <!-- second_box -->
+        <div class="story__box" id="box_2">
+          <img src="./img/pexels-pixabay-260606.jpg" alt="img" />
+          <div class="text" id="text2">
+            <p>
+              The huge market and immense potential of customised sports apparel
+              business can be brought to justice only with someone more humane
+              and overtly sincere in doing business.
+            </p>
+
+            <p>
+              Being already experienced businesswomen and existing network in
+              Asia (SpotOn Fashionwear) didn’t take them much time to launch
+              their own Customized Sports Apparel Brand and SpotOn Apparel was
+              thus born. Any vacuum of experience and practical implementation
+              of such a business was plugged by hiring a man with 15 years’
+              experience dealing in Custom Sports Apparel business who will head
+              the Sales and Operations as our V.P. Ops with Spot On Apparel and
+              Spot On Group of Companies.
+            </p>
+
+            <p>
+              Apart from rigidly sticking to timelines, and the promises of
+              great Quality &amp; Scientifically designed Sports Apparel, The
+              Founders being Moms themselves understands the “Financial Pinch”
+              every Parent feels, as invariably, almost always, it is the
+              Parent, who has to bear the costs of their wards participating in
+              any sporting activity. Spot On Apparel has thus decided to offer
+              special sponsorship to all schools and college teams.
+              <a href="https://www.spotonapparel.com/apply-for-sponsorship"
+                ><b>Apply For Sponsorship<b></b></b></a
+              ><b><b> </b></b>
+            </p>
+          </div>
+        </div>
+        <!-- third_box -->
+        <div class="story__box" id="box_3">
+          <div class="text" id="text3">
+            <p>
+              Apart from rigidly sticking to timelines, and the promises of
+              great Quality &amp; Scientifically designed Sports Apparel, The
+              Founders being Moms themselves understands the “Financial Pinch”
+              every Parent feels, as invariably, almost always, it is the
+              Parent, who has to bear the costs of their wards participating in
+              any sporting activity. Spot On Apparel has thus decided to offer
+              special sponsorship to all schools and college teams.
+              <a href="https://www.spotonapparel.com/apply-for-sponsorship"
+                ><b>Apply For Sponsorship<b></b></b></a
+              ><b><b> </b></b>
+            </p>
+
+            <p>
+              In this rapidly expanding sports apparel market in America with
+              more than 1000 companies dealing in customised sports apparel
+              sales, we promise you our best. Like Michael Jordan correctly said
+              “Some people want it to happen, some wish it would happen and
+              others make it happen.” Taking up this challenge, SpotOn Apparel
+              has put in a lot of research and the challenges have been met
+              which can be seen in the
+              <a href="https://www.spotonapparel.com/sizzing-chart">
+                <b>"COMPARISON CHART"</b>.</a
+              >
+            </p>
+
+            <p>
+              Mistakes in customization won't happen since you will approve
+              Sample Paper Prints of your own orders, but if they still do!
+              Then, such orders, will be replaced free of cost and that too in a
+              jiffy so that you don't lose all your next games and the
+              motivation, just because re-made uniform wasn't shipped in time!
+              We at SpotOn Apparel have made FastTrack production arrangements
+              so that even replacement orders do not cost you a game.
+            </p>
+          </div>
+          <img
+            id="third__img"
+            src="./img/pexels-pixabay-159607.jpg"
+            alt="img"
+          />
+        </div>
+      </div>
+
+      <div class="middle__section">
+        <img
+          id="left__img"
+          src="./img/olivier-collet-rdkMHfCNqBA-unsplash.jpg"
+          alt=""
+        />
+        <div class="middle__content">
+          <div class="list__items">
+            <h1>WE OFFER YOU</h1>
+            <h5>
+              <ol>
+                <li>
+                  Highly devoted and reliable online platform for your
+                  customised uniform needs.
+                </li>
+                <li>Available for your choice of sport.</li>
+                <li>Best of dri-fit material.</li>
+                <li>As per US size chart and True To Size.</li>
+                <li>
+                  Sizing kits available for trial at fully reefundalbe cost.
+                </li>
+                <li>
+                  Complete automated self-ordering platform, thus eliminating
+                  any oversight, rejections or sizing issues.
+                </li>
+                <li>
+                  Order proceeds for production only after your satisfaction and
+                  approval of sample Prints.
+                </li>
+                <li>
+                  Rejection from manufacturing defect will be replaced free of
+                  cost.
+                </li>
+                <li>
+                  Dedicated Accounts Manager for every client irrespective of
+                  order quantity.
+                </li>
+              </ol>
+            </h5>
+          </div>
+        </div>
+        <img
+          id="right__img"
+          src="./img/olivier-collet-H7cIqigZOBo-unsplash.jpg"
+          alt=""
+        />
+      </div>
+
+      <div class="bottom__img">
+        <img src="./img/Group 31.png" alt="" />
+      </div>
+
+      <div class="bottom">
+        <h2>
+          Now While you feel all confident outside, help us, to help you, take
+          care of all your needs for Customized, Sports Apparel or Fashion
+          Apparel by Ordering with us NOW!
+        </h2>
+
+        <div class="buttons">
+          <button class="butn" id="btn_1">Get a free design</button>
+          <button class="butn" id="btn_2">Get a free quote</button>
+          <button class="butn" id="btn_3">Order now</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

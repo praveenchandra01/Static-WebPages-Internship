@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <title>BASEBALL</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Barlow Condensed", sans-serif;
+        overflow-x: hidden;
+        list-style-position: inside;
+      }
+      .img__container {
+        position: relative;
+        width: 100%;
+        color: white;
+        text-align: center;
+      }
+      .main__img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        background-size: auto;
+      }
+      .heading {
+        font-size: 6rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* //////////////////////////////////////// */
+
+      .grid {
+        width: 100%;
+      }
+      .row__img > img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        padding: 0;
+      }
+      .row__img {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .content {
+        text-align: left;
+        padding: 5rem 3rem 1rem 5rem;
+      }
+      .content li {
+        font-size: larger;
+      }
+      li::marker {
+        font-size: 20px;
+        font-weight: bolder;
+      }
+      @media screen and (max-width: 840px) {
+        .content {
+          padding: 1rem 1rem 1rem 3rem;
+        }
+      }
+      @media screen and (max-width: 666px) {
+        .row__img {
+          grid-template-columns: 1fr;
+        }
+        .content {
+          text-align: left;
+          padding: 3rem 1rem 1rem 3rem;
+        }
+      }
+      /* /////////////////////////////////////////// */
+
+      /* PRICING */
+      .pricing {
+        text-align: center;
+        padding-top: 1rem;
+        background: url(./img/1.png) no-repeat center center/cover;
+      }
+
+      .pricing h1 {
+        font-size: 4rem;
+      }
+      .pricing__boxes {
+        width: 100%;
+        margin: auto;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+      }
+      .pricing__box {
+        width: 80%;
+        max-width: 460px;
+        height: 400px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 4px 14px 1px rgb(0 0 0 / 17%);
+        border-radius: 9px;
+        position: relative;
+        overflow: hidden;
+        margin: 2rem 1rem 4rem 1rem;
+        transition: all 0.2s ease-out;
+      }
+      .box__head {
+        height: 80px;
+        color: white;
+        text-align: center;
+        background-color: black;
+        padding: 10px;
+        position: relative;
+      }
+
+      .box__head > h5 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .table__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+      }
+      .pricing__box:hover {
+        margin-top: -0.01rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+      }
+
+      .box__table {
+        padding: 1rem;
+        width: 80%;
+        margin: auto;
+      }
+      .quote__btn {
+        margin: 1rem auto;
+        margin-bottom: 3rem;
+        padding: 5px 42px;
+        color: white;
+        background-color: #030e19;
+        outline: none;
+        border: none;
+        border-radius: 34px;
+      }
+      @media only screen and (max-width: 850px) {
+        .pricing__boxes {
+          width: 100%;
+          display: flex;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+        }
+        .pricing__box {
+          margin: 2rem auto;
+        }
+        .table__row {
+          margin-bottom: 15px;
+          font-size: 1.1rem;
+        }
+      }
+
+      /* //////////////////////////////////////////// */
+
+      .packages {
+        position: relative;
+        /* height: 700px; */
+        background: url(./img/2.jpg) no-repeat center center/cover;
+      }
+      .packages h1 {
+        font-size: 4rem;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+      }
+      .package__boxes {
+        width: 95%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+      .package__box {
+        width: 300px;
+        height: 400px;
+        background-color: white;
+        margin: 8rem 1rem 4rem 1rem;
+      }
+      #second__box {
+        width: 350px;
+        height: 450px;
+      }
+      .temp {
+        position: relative;
+        transition: all 0.2s ease-out;
+      }
+      #first__badge {
+        width: 100px;
+        position: absolute;
+        left: 118px;
+        top: 66px;
+      }
+      #second__badge {
+        position: absolute;
+        top: 24px;
+        left: 125px;
+      }
+      #third__badge {
+        width: 100px;
+        position: absolute;
+        top: 66px;
+        left: 115px;
+      }
+      .box__content {
+        padding-top: 3rem;
+        text-align: center;
+      }
+      #box__heading {
+        width: 80%;
+        margin: auto;
+        border-bottom: 2px solid gray;
+      }
+      .carousel__box {
+        width: 85%;
+        height: 14rem;
+        margin: 2rem auto;
+      }
+      .icon {
+        filter: invert(100%);
+      }
+
+      .box__btn {
+        width: 50%;
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 5px 3rem;
+      }
+      #btn1 {
+        position: absolute;
+        bottom: 123px;
+        left: 82px;
+      }
+      #btn2 {
+        position: absolute;
+        bottom: 73px;
+        left: 99px;
+      }
+      #btn3 {
+        position: absolute;
+        bottom: 123px;
+        left: 82px;
+      }
+      @media screen and (max-width: 1100px) {
+        #second__box {
+          width: 300px;
+          height: 400px;
+        }
+        #second__badge {
+          width: 100px;
+          top: 49px;
+          left: 120px;
+        }
+        #btn1 {
+          position: absolute;
+          bottom: 72px;
+          left: 82px;
+        }
+        #btn2 {
+          position: absolute;
+          bottom: 72px;
+          left: 90px;
+        }
+        #btn3 {
+          position: absolute;
+          bottom: 72px;
+          left: 82px;
+        }
+      }
+
+      /* ///////////////////////////////////////// */
+      .ventures {
+        width: 100%;
+        background-color: #030e19;
+        color: white;
+        padding: 3rem;
+      }
+      .ventures h1 {
+        font-size: 4rem;
+        text-align: center;
+      }
+      .ventures h6 {
+        text-align: center;
+      }
+      .cards {
+        width: 100%;
+        margin: 3rem auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+      .card {
+        height: 200px;
+        width: 350px;
+        background-color: #212529;
+        color: #ffc013;
+        margin: 10px 10px;
+        text-align: center;
+        box-shadow: 0px 4px 14px 1px rgb(0 0 0 / 17%);
+      }
+      .card img {
+        padding: 2rem;
+      }
+
+      /* ///////////////////////////// */
+
+      .getintouch {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        padding: 2rem;
+      }
+      .getintouch input {
+        margin: 4rem auto;
+        width: 100%;
+        height: 50px;
+        border: none;
+        outline: none;
+        box-shadow: 0px 4px 14px 1px rgb(0 0 0 / 17%);
+        border-radius: 37px;
+        padding-left: 15px;
+      }
+      .categories_area_4 {
+        height: 700px;
+        padding-top: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img__container">
+      <img
+        class="main__img"
+        src="./img/eduardo-balderas-UVxd5b-_tw8-unsplash.jpg"
+        alt="BASEBALL"
+      />
+      <h1 class="heading">BASEBALL</h1>
+    </div>
+
+    <div class="grid">
+      <div class="row__img">
+        <img
+          src="./img/chanan-greenblatt-wNQ4lFafIfI-unsplash.jpg"
+          alt="BASEBALL"
+        />
+
+        <div class="content">
+          <h1 class="text-uppercase">CUSTOMISED BASEBALL UNIFORM</h1>
+          <h5>
+            Sublimation Printing ensures every thread of your uniforms has your
+            own :
+          </h5>
+          <ul>
+            <li>Custom Logo</li>
+            <li>Custom Colors</li>
+            <li>Custom Designs</li>
+            <li>Player Names & Number</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row__img">
+        <div class="content">
+          <h2>
+            Dress professionally for your games at unbelievably low prices!
+          </h2>
+          <h5>
+            Special Sponsoship for "Schools/College" Teams to inculcte the
+            spirit of "Competing professionally", at an early age!
+          </h5>
+        </div>
+        <img
+          src="./img/neonbrand-J4RSyiz_M3I-unsplash (1).jpg"
+          alt="BASEBALL"
+        />
+      </div>
+    </div>
+
+    <!-- 3 section -->
+    <div class="fetures_area_3 pt-80">
+      <div
+        class="categories_area_4 pt-200 mt-100 d-sm-block"
+        data-background="https://themepure.net/template/gota/gota/assets/img/slider/bgbox2.png"
+        style="
+          background-image: url('https://themepure.net/template/gota/gota/assets/img/slider/bgbox2.png');
+        "
+      >
+        <div class="container">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="text-center section-wrapper mb-35">
+              <h2 class="text-white section-title">SPOT ON APPAREL</h2>
+              <p class="text-white section-title">
+                Offers a Guaranteed Turn - Around time with 3 Options
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-5 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+              <div
+                class="fetures_3"
+                data-background="assets/img/std.png"
+                style="background-image: url('assets/img/std.png')"
+              >
+                <div class="pt-0 mt-0 fetures_3_body">
+                  <a href="https://spotonwebsite.netlify.app/shop.html"
+                    ><h2 class="mb-60">STANDARD</h2></a
+                  >
+                  <p>TRACK <span>14 DAYS</span><br />21 DAYS GUARANTEED</p>
+                </div>
+
+                <div class="fetures_3_footer"></div>
+              </div>
+            </div>
+
+            <div class="mb-5 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+              <div
+                class="fetures_3"
+                data-background="assets/img/rush.png"
+                style="background-image: url('assets/img/rush.png')"
+              >
+                <div class="fetures_3_body">
+                  <a href="https://spotonwebsite.netlify.app/shop.html"
+                    ><h2 class="mb-60">RUSH</h2></a
+                  >
+                  <p>TRACK <span>10 DAYS</span><br />14 DAYS GUARANTEED</p>
+                </div>
+                <div class="fetures_3_footer"></div>
+              </div>
+            </div>
+            <div class="mb-5 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+              <div
+                class="fetures_3"
+                data-background="assets/img/priority.png"
+                style="background-image: url('assets/img/priority.png')"
+              >
+                <div class="fetures_3_body">
+                  <a href="https://spotonwebsite.netlify.app/shop.html"
+                    ><h2 class="mb-60">PRIORITY</h2></a
+                  >
+                  <p>
+                    TRACK <span class="text-dark">5 DAYS</span><br />8 DAYS
+                    GUARANTEED
+                  </p>
+                </div>
+                <div class="fetures_3_footer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 3 ends -->
+
+    <!-- PRICING -->
+    <div class="pricing">
+      <h1>PRICING</h1>
+      <h3>(Based on quality)</h3>
+
+      <div class="pricing__boxes">
+        <div class="pricing__box">
+          <div class="box__head">
+            <h5>Custom Baseball Jersey Only</h5>
+          </div>
+          <div class="box__table">
+            <div class="table__row">
+              <div><h3>Quantity</h3></div>
+              <div><h3>Price</h3></div>
+            </div>
+            <div class="table__row">
+              <div>01-09</div>
+              <div>$39.99/set</div>
+            </div>
+            <div class="table__row">
+              <div>10-25</div>
+              <div>$34.99/set</div>
+            </div>
+            <div class="table__row">
+              <div>26-50</div>
+              <div>$32.49/set</div>
+            </div>
+            <div class="table__row">
+              <div>51-100</div>
+              <div>$31.99/set</div>
+            </div>
+            <div class="table__row">
+              <div>101-250</div>
+              <div>$27.99/set</div>
+            </div>
+            <div class="table__row">
+              <div>251-500</div>
+              <div>$19.99/set</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing__box">
+          <div class="box__head">
+            <h5>Custom Baseball Jersey Only</h5>
+          </div>
+          <div class="box__table">
+            <div class="table__row">
+              <div><h3>Quantity</h3></div>
+              <div><h3>Price</h3></div>
+            </div>
+            <div class="table__row">
+              <div>01-09</div>
+              <div>$39.99/set</div>
+            </div>
+            <div class="table__row">
+              <div>10-25</div>
+              <div>$34.99/set</div>
+            </div>
+            <div class="table__row">
+              <div>26-50</div>
+              <div>$32.49/set</div>
+            </div>
+            <div class="table__row">
+              <div>51-100</div>
+              <div>$31.99/set</div>
+            </div>
+            <div class="table__row">
+              <div>101-250</div>
+              <div>$27.99/set</div>
+            </div>
+            <div class="table__row">
+              <div>251-500</div>
+              <div>$19.99/set</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing__box">
+          <div class="box__head">
+            <h5>Custom Baseball Jersey Only</h5>
+          </div>
+          <div class="box__table">
+            <div class="table__row">
+              <div><h3>Quantity</h3></div>
+              <div><h3>Price</h3></div>
+            </div>
+            <div class="table__row">
+              <div>01-09</div>
+              <div>$39.99/set</div>
+            </div>
+            <div class="table__row">
+              <div>10-25</div>
+              <div>$34.99/set</div>
+            </div>
+            <div class="table__row">
+              <div>26-50</div>
+              <div>$32.49/set</div>
+            </div>
+            <div class="table__row">
+              <div>51-100</div>
+              <div>$31.99/set</div>
+            </div>
+            <div class="table__row">
+              <div>101-250</div>
+              <div>$27.99/set</div>
+            </div>
+            <div class="table__row">
+              <div>251-500</div>
+              <div>$19.99/set</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="quote__btn">REQUEST A FREE QUOTE</button>
+    </div>
+
+    <!-- PACKAGES -->
+    <section class="packages">
+      <h1 id="package__heading">PACKAGES</h1>
+      <div class="package__boxes">
+        <!-- first box   -->
+        <div class="temp">
+          <div class="package__box">
+            <img
+              class="pack__img"
+              id="first__badge"
+              src="./img/silver.png"
+              alt="silver"
+            />
+            <div class="box__content">
+              <h2 id="box__heading">SILVER</h2>
+              <div class="carousel__box">
+                <div class="inner">
+                  <div id="demo1" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <a
+                        href="https://spotonapparel.com/admin/storage/app/productdesigns/e9WfiAa3HpaFggBhjFxtCNvhHlMf58YhI1HLHZYZ.jpeg"
+                        class="glightbox191 carousel-item active"
+                      >
+                        <img
+                          style="width: 100%; height: 100%"
+                          src="./img/slider_1.jpeg"
+                          alt="First image"
+                        />
+                      </a>
+
+                      <a
+                        href="https://spotonapparel.com/admin/storage/app/productdesigns/D1yxqJYwulkV6Ss5KSbhTDPzMxehqshEZdYeUMjO.jpeg"
+                        class="glightbox191 carousel-item"
+                      >
+                        <img
+                          style="width: 100%; height: 100%"
+                          src="./img/slider_2.jpeg"
+                          alt="Second image"
+                        />
+                      </a>
+
+                      <a
+                        href="https://spotonapparel.com/admin/storage/app/productdesigns/cbX6OEtN2vNHNeiOvjB4J6ycqu5aftPR6ln4u3ob.jpeg"
+                        class="glightbox191 carousel-item"
+                      >
+                        <img
+                          style="width: 100%; height: 100%"
+                          src="./img/slider_3.jpeg"
+                          alt="Third image"
+                        />
+                      </a>
+
+                      <a
+                        class="icon carousel-control-prev"
+                        href="#demo1"
+                        data-slide="prev"
+                      >
+                        <span class="carousel-control-prev-icon"></span>
+                      </a>
+                      <a
+                        class="icon carousel-control-next"
+                        href="#demo1"
+                        data-slide="next"
+                      >
+                        <span class="carousel-control-next-icon"></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="box__btn" id="btn1">SELECT</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- second box -->
+        <div class="temp">
+          <div class="package__box" id="second__box">
+            <img
+              class="pack__img"
+              id="second__badge"
+              src="./img/platinum.png"
+              alt="silver"
+            />
+            <div class="box__content">
+              <h2 id="box__heading">PLATINUM</h2>
+              <div class="carousel__box">
+                <div class="inner">
+                  <div id="demo2" class="carousel slide" data-ride="carousel">
+                    <!-- <ol style=" bottom: -10px; filter: invert(1);" class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol> -->
+                    <div class="carousel-inner">
+                      <a
+                        href="https://spotonapparel.com/admin/storage/app/productdesigns/e9WfiAa3HpaFggBhjFxtCNvhHlMf58YhI1HLHZYZ.jpeg"
+                        class="glightbox191 carousel-item active"
+                      >
+                        <img
+                          style="width: 100%; height: 100%"
+                          src="./img/slider_1.jpeg"
+                          alt="First image"
+                        />
+                      </a>
+
+                      <a
+                        href="https://spotonapparel.com/admin/storage/app/productdesigns/D1yxqJYwulkV6Ss5KSbhTDPzMxehqshEZdYeUMjO.jpeg"
+                        class="glightbox191 carousel-item"
+                      >
+                        <img
+                          style="width: 100%; height: 100%"
+                          src="./img/slider_2.jpeg"
+                          alt="Second image"
+                        />
+                      </a>
+
+                      <a
+                        href="https://spotonapparel.com/admin/storage/app/productdesigns/cbX6OEtN2vNHNeiOvjB4J6ycqu5aftPR6ln4u3ob.jpeg"
+                        class="glightbox191 carousel-item"
+                      >
+                        <img
+                          style="width: 100%; height: 100%"
+                          src="./img/slider_3.jpeg"
+                          alt="Third image"
+                        />
+                      </a>
+
+                      <a
+                        class="icon carousel-control-prev"
+                        href="#demo2"
+                        data-slide="prev"
+                      >
+                        <span class="carousel-control-prev-icon"></span>
+                      </a>
+                      <a
+                        class="icon carousel-control-next"
+                        href="#demo2"
+                        data-slide="next"
+                      >
+                        <span class="carousel-control-next-icon"></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="box__btn" id="btn2">SELECT</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- third box -->
+        <div class="temp">
+          <div class="package__box">
+            <img
+              class="pack__img"
+              id="third__badge"
+              src="./img/gold.png"
+              alt="silver"
+            />
+            <div class="box__content">
+              <h2 id="box__heading">GOLD</h2>
+              <div class="carousel__box">
+                <div class="inner">
+                  <div id="demo3" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <a
+                        href="https://spotonapparel.com/admin/storage/app/productdesigns/e9WfiAa3HpaFggBhjFxtCNvhHlMf58YhI1HLHZYZ.jpeg"
+                        class="glightbox191 carousel-item active"
+                      >
+                        <img
+                          style="width: 100%; height: 100%"
+                          src="./img/slider_1.jpeg"
+                          alt="First image"
+                        />
+                      </a>
+
+                      <a
+                        href="https://spotonapparel.com/admin/storage/app/productdesigns/D1yxqJYwulkV6Ss5KSbhTDPzMxehqshEZdYeUMjO.jpeg"
+                        class="glightbox191 carousel-item"
+                      >
+                        <img
+                          style="width: 100%; height: 100%"
+                          src="./img/slider_2.jpeg"
+                          alt="Second image"
+                        />
+                      </a>
+
+                      <a
+                        href="https://spotonapparel.com/admin/storage/app/productdesigns/cbX6OEtN2vNHNeiOvjB4J6ycqu5aftPR6ln4u3ob.jpeg"
+                        class="glightbox191 carousel-item"
+                      >
+                        <img
+                          style="width: 100%; height: 100%"
+                          src="./img/slider_3.jpeg"
+                          alt="Third image"
+                        />
+                      </a>
+
+                      <a
+                        class="icon carousel-control-prev"
+                        href="#demo3"
+                        data-slide="prev"
+                      >
+                        <span class="carousel-control-prev-icon"></span>
+                      </a>
+                      <a
+                        class="icon carousel-control-next"
+                        href="#demo3"
+                        data-slide="next"
+                      >
+                        <span class="carousel-control-next-icon"></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="box__btn" id="btn3">SELECT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENTURES -->
+    <div class="ventures">
+      <h1>Our Other Ventures</h1>
+      <h6>
+        Besides Sports Apparel, Spot On Group forays into Fashion-wear, Free
+        Pharmaceutical Encyclopaedia Services, Global Offshoring of your
+        Business (B.P.O) and IT Services and BIM (Building Information
+        Management) services.
+      </h6>
+      <div class="cards">
+        <div class="card card_one">
+          <img src="./img/bim.png" alt="" />
+          <h3>MEDIC AND PHARMA SERVICES</h3>
+        </div>
+        <div class="card two">
+          <img src="./img/bim.png" alt="" />
+          <h3>FASHION WEAR</h3>
+        </div>
+        <div class="card card_three">
+          <img src="./img/bim.png" alt="" />
+          <h3>GLOBAL IT & BPO SERVICES</h3>
+        </div>
+      </div>
+    </div>
+    <!-- VENTURES END -->
+
+    <!-- GET IN TOUCH -->
+    <div class="getintouch">
+      <h1>GET IN TOUCH</h1>
+      <h3>
+        Sign up for the news about our latest arrivals and get an exclusive
+        early access shopping. join 60,000+ subscribers and get a new discount
+        coupon on every Saturday
+      </h3>
+      <input type="email" placeholder="Enter your email here" />
+    </div>
+  </body>
+</html>

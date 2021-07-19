@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: #e5e5e5;
+}
+.navbar_container {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar_menu {
+  display: flex;
+  flex-direction: row;
+}
+.navbar__item {
+  list-style: none;
+  padding-left: 20px;
+}
+.navbar__item > a {
+  text-decoration: none;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  /* identical to box height, or 175% */
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #e77c40;
+}
+.navber_logo {
+  /* position: absolute; */
+  width: 185px;
+  height: 67px;
+  left: 587px;
+  top: 35px;
+  background: #e3e3e3;
+  border: 1px solid #e77c40;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e77c40;
+}
+
+.navbar_button {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 28px;
+  /* identical to box height, or 175% */
+  letter-spacing: 0.2px;
+  padding: 20px;
+  margin: 5px;
+  border-radius: 7px;
+  border: 2px solid #e77c40;
+  width: 130px;
+}
+
+#btn1 {
+  color: white;
+  background-color: #e77c40;
+}
+#btn2 {
+  color: #e77c40;
+}
+.hero {
+  display: flex;
+}
+.hero__left {
+  max-width: 600px;
+  padding: 70px 0px 0px 70px;
+}
+#hero__heading {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 54px;
+  padding-bottom: 20px;
+}
+.input__bar {
+  height: 50px;
+  width: 300px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 5px 0px 0px 5px;
+}
+#Search_btn {
+  height: 50px;
+  width: 150px;
+  padding: 10px;
+  border-radius: 0 5px 5px 0;
+  background-color: #e77c40;
+  color: white;
+  outline: none;
+  border: none;
+}
+#hero__heading2 {
+  margin-top: 10px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 29px;
+}
+.hero__right{
+      margin-left: 300px;
+      margin-top: 100px;
+}
+.shoe__img{
+    max-height: 300px;
+}
+.shoe__img > img{
+    height: 296px;
+    z-index: 10;
+}

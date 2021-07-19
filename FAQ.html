@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+  <script src="https://kit.fontawesome.com/57c416f0a3.js" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
+
+    <title>FAQ</title>
+
+<style>
+       * {
+        margin: 0; 
+        padding: 0;
+        font-family: 'Barlow Condensed', sans-serif; 
+        font-size: x-large;
+ }
+  .banner{
+        background-image: url(./img/banner.jpg);
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+  }
+  .banner__container{
+        text-align: center;
+        width: 70%;
+        margin: auto;
+  }
+  .banner__container > p{
+         padding: 4rem 0;
+  }
+
+  .main{
+      position: relative;
+        top: 0;
+        width: 100%;
+    
+  }
+  .row__btn{
+        width: 80%;
+        margin: auto;
+        margin-top: 3rem;
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr 2fr;
+  }
+  .main__btn{
+        background: #424154;  
+        color: #fff;  
+        width: 222px;
+        height: 60px;
+        border: none;
+        border-radius: 0px;
+        margin: 1rem;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.35s;
+        outline: none;
+}
+  .main__btn a{
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        text-decoration: none;
+  }
+  .main__btn::after{
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: linear-gradient(to bottom, transparent 0%, #2bb9a9 100%);
+        transition: all 0.35s;
+  }
+
+  .main__btn:hover::after{
+        height: 100%;
+        opacity: 0.7;
+  }
+  @media screen and (max-width: 500px){
+      .row__btn{
+          grid-template-columns: 1fr;
+      }
+      .main__btn{
+          width: 80%;
+          margin: 15px auto;
+      }
+  }
+  @media screen and (min-width:500px) and (max-width: 1100px){
+      .row__btn{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+      }
+      .main__btn{
+          width: 80%;
+      }
+  }
+  .Tabs{
+        width: 80%;
+        margin: auto;
+        margin-top: 2rem;
+  }
+  div[data-toggle="collapse"]{
+        border-bottom:1px solid #6a859b;
+        width:100%;
+        cursor:pointer;
+        padding:1%;
+ }
+    .pull-right{
+            float: right;
+    }
+    .fa{
+            filter: grayscale(1);
+    }
+
+</style>
+
+</head>
+<body>
+    <div>
+            <div class="main">
+                <div class="banner">
+                    <div style="margin-top: 50px " class="banner__container">
+
+                            <p style="color:rgb(0, 0, 0);">
+                            SpotOn Apparel is Your one-stop-shop to buy Custom designed uniforms and apparel for your team. <br>
+                             We have gained expertise in designing and manufacturing custom uniforms and Apparel for every sport. <br>
+                              We can get you Uniforms and Apparel in just about any Color, Design, Size  Check Sizeing Chart <b> <a target="_blank" href="https://www.spotonapparel.com/sizzing-chart"> Here </a> </b>  </a>  and any Pattern <b> <a target="_blank" href="https://www.spotonapparel.com/patterns-catalogue"> Check Pattern Catalogue Here </a> </b> 
+                            SpotOn Apparel offers you a ‘Guaranteed Turnaround time’ <b> <a target="_blank" href="https://www.spotonapparel.com/order-policies">More Details </a> </b></p>
+                            </div>
+                    </div>
+                    <div class=" row__btn">
+                            
+                                <button type="button" id="GENERAL" class="main__btn" data-toggle="collapse" data-target="#GENERALTAB"> <a>SpotOn USP</a> </button>
+                            
+                            
+                                <button type="button" id="ABOUTUS" class="main__btn"> <a>ABOUT US </a> </button>
+                            
+    
+                                <button type="button" id="PRICINGS" class="main__btn"> <a>PRICINGS</a> </button>                        
+    
+                            
+                                <button type="button" id="SIZING" class="main__btn"> <a> SIZING </a> </button>
+
+                            
+                                <button type="button" id="QUALITY" class="main__btn"> <a>  QUALITY</a> </button>
+                            
+                            
+                                <button type="button" id="ORDER" class="main__btn"> <a> ORDER </a> </button>
+    
+                            
+                                <button type="button" id="COMMON" class="main__btn"> <a> MOST COMMON ISSUE </a> </button>
+                            
+    
+                                <button type="button" id="CONTACTUS" class="main__btn"> <a> CONTACT US </a> </button>
+                            
+                    </div>
+              </div>
+    
+
+    <div class="row  Tabs">
+        <div id="GENERALTAB" class="col-sm-12" tabindex="1" style="display: none;">
+            <ul id="accordion" class="col-sm-6 col-md-12 list-unstyled">
+                  <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#general1" aria-expanded="false" aria-controls="general1">
+                          Why Choose SpotOn Apparel
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="general1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                              <h5>Our Ten Commandments:</h5>
+                              <ol style="padding-left: 10px">
+                                  <li>Guaranteed Delivery, Guaranteed Turnaround. We understand the financial implications of a delayed delivery apart from the obvious social and mental Implications of a team not getting their uniforms in time to play their games.</li>
+    
+                                  <li>Unbelievably Low prices.</li>
+                                  <li>24*7 Sales and Support Services at your disposal.</li>
+                                  <li>Quality at par with the Topmost Brands.</li>
+                                  <li>Fully automated Ordering Platform with super easy UI.</li>
+                                  <li>Better Equipped to provide Apparel with No Sizing/ Design/ Color, Issues coming up.</li>
+                                  <li>Transparent Business Policies, Ethical Business Practices are followed, nothing is hidden.</li>
+                                  <li>We refuse to accept an Order in case we cannot keep the timelines rather than accepting the and then not delivering in time just to make money at the cost of your sporting activity.</li>
+                                  <li>SpotOn Apparel Operations is managed by a 15 year experienced person in Customized Sports Apparel Industry.</li>
+                                  <li>One Belief: One Happy Customer may bring us one more but one unhappy customer can stop 10 from giving us business.</li>
+                              </ol>
+                          </div>
+                      </div>
+                  </li>
+    
+    
+    
+                   <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#general2" aria-expanded="false" aria-controls="general2">
+                          Do we Manufacture Locally?
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="general2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                              We have partnered with Factories in Asia, who are known to provide the Best Quality Fabrics and Workmanship to almost all Leading Sportswear Companies in the World, We take pride in being able to provide the same World class standards, the topmost brands provide, at less than 40% of the prices the “Top Brands” would charge you for the exact same stuff.
+                          </div>
+                      </div>
+                  </li>
+    
+    
+    
+    
+                 </ul>
+        </div>
+    
+
+        
+        <div id="ABOUTUSTAB" class="col-sm-12" tabindex="1" style="display: none;">
+            <ul id="accordion" class="col-sm-6 col-md-12 list-unstyled">
+    
+                  <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#about1" aria-expanded="false" aria-controls="about1">
+                         Where do we work from? What is our Current Organizational Set-Up?
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="about1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                         Our HQ is in Delaware 19901, which staffs a team of 15 dedicated people including Designers, Operations, Sales and Support team members. The Fulfilment is headed by an extremely experienced Manager who strives to ensure that “Logistics is as SpotOn” as our Apparel are!  This whole team, is headed by a Vice President Operations and Sales, who is a highly experienced man having worked with Leading names in similar industry for almost 15 years. The details can be read <b><a href="https://www.spotonapparel.com/why-order-with-spot-on">here</a></b>  
+                          </div>
+                      </div>
+                  </li>
+    
+    
+    
+                   <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#about2" aria-expanded="false" aria-controls="about2">
+                        How was SpotOn Apparel Born?
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="about2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                         The Founders are two Businesswomen (Fashion-Designers), who were once scammed by a Sports Apparel company into paying and then just keep waiting for their Kid`s and the entire Team`s while the Tournament Games got over by the time the deliveries came in, with Errors and Poor Quality! Rigorous Follow ups and extensive research, led them to unearth similar cases, led them to understand there were Millions like them, “Scammed”   besides understanding the huge potential this Market has, If only someone started with a Straightforward and Honest Approach, this World will be a better place to live in, with Honest Business Polices by themselves bringing you enough “Business and Profits”.
+                         <br><br>
+                         Being already into business and a well-known name in the Fashion-Wear Industry in the Asian Continent with a huge Franchisee network in Asian Market, they resolved that they would put an end to this SCAMMING by starting such Sports Apparel Brands, and make the uniforms and apparel affordable for every child/ team/ club/ league, and does not Scam People off their hard earned money nor takes away the joy from the Players by ensuring Guaranteed and in-time deliveries. Now that they have worked out on Logistics they are launching their Fashion-Wear range now in America too. <b><a href="https://www.spotonapparel.com/faq#">Spoton Fashion</a></b>.
+                         <br><br>
+    
+                         Our “Associate-Manufacturers” are spread over 5 Asian countries and are Manufacturers who once produced / some still produce, Apparel for the Top 2-3 Sportswear Brands of America / World.
+                          </div>
+                      </div>
+                  </li>
+    
+    
+    
+    
+                  <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#about3" aria-expanded="false" aria-controls="about3">
+                        Where are our Factories?
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="about3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                        Our “Associate ( Partner) -Manufacturers” are spread over 5 Asian countries and are Manufacturers who once produced / some still produce, Apparel for the Top 2-3 Sportswear Brands of America / World. All our manufacturing activities ( Cutting, Stitching, Printing etc.,  is all done in our factories in the Asian Continent and each sport / style is manufactured by a Particular Factory which specializes in producing that / those item/(s),  and that is the reason why people find our products such amazing Pro-fit and Pro-looks for every Sport/ Apparel/ Occasion/ Event / Industry.
+                          </div>
+                      </div>
+                  </li>
+    
+    
+                  
+    
+    
+    
+    
+                 </ul>
+        </div>
+    
+    
+    
+        <div id="PRICINGSTAB" class="col-sm-12" tabindex="1" style="display: none;">
+            <ul id="accordion" class="col-sm-6 col-md-12 list-unstyled">
+    
+                  <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#pricing1" aria-expanded="false" aria-controls="pricing1">
+                          Why are our prices unbelievably Low? Are we selling cheap stuff?
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="pricing1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                            SpotOn Apparel is a Brand Conceived and wholly Owned by us! And, as such, we have managed to bring you the exact same Quality as the Top Brands at such unbelievably Low prices because we get your stuff right from the factory to your doorstep. No Middlemen (Except for the Delivery Guy!) - No Price Escalations! It`s as simple as that.
+                          </div>
+                      </div>
+                  </li>
+    
+    
+    
+                    <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#pricing2" aria-expanded="false" aria-controls="pricing2">
+                          Are there any Hidden Charges?  In the name of Shipping / Custom-Designing / Artwork / Pattern?
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="pricing2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                            The only charges that are added to the prices are:  Taxes if applicable and Shipping (Depending on shipping Mode, By Air-shipping time is 3-5 days, and it mostly will cost 2-3$ per jersey, 4-5$ per set, and extra for football pants, backpacks and heavy/bulky items.) <b> Rest is all included in the price offered </b> .
+                          </div>
+                      </div>
+                  </li>
+    
+    
+    
+                 </ul>
+        </div>
+    
+    
+    
+        <div id="SIZINGTAB" class="col-sm-12" tabindex="1" style="display: none;">
+            <ul id="accordion" class="col-sm-6 col-md-12 list-unstyled">
+    
+                  <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#sizzing1" aria-expanded="false" aria-controls="sizzing1">
+                          Is there a limitation to what we can design / customize or the sizes offered?
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="sizzing1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                            There is no limitation to the “Customization”. Every thread of your apparel can be customized to what you have imagined, No Limitations to Sizes offered, and no Limitations to where you can wear our apparel.
+                          </div>
+                      </div>
+                  </li>
+    
+    
+                   <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#sizzing2" aria-expanded="false" aria-controls="sizzing2">
+                          Do we offer standard patterns / styles in sports Uniforms/ Apparel?
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="sizzing2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                            We offer a standard style for every sport that is mostly acceptable as a standard pattern for that sport however any new Patterns / Style if desired can be done for you. Even for Sports not covered in the list or for an event where you want to make use of our unlimited customization abilities for Apparel.
+    
+                          </div>
+                      </div>
+                  </li>
+    
+    
+    
+                  <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#sizzing3" aria-expanded="false" aria-controls="sizzing3">
+                          Are Sizing Kits available? Are they Free or Paid? 
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="sizzing3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                           Sizing Kits are shipped against a pre-paid but refundable amount on return. However, if our measuring charts and our measurement guide is followed to the T, you may not need a sizing kit. Yet for any more help in sizing players you can reach out to our: Pattern Designer: Contact # xxxxx-xxxx-xxx.
+    
+                          </div>
+                      </div>
+                  </li>
+    
+    
+    
+                  <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#sizzing4" aria-expanded="false" aria-controls="sizzing4">
+                         How are our sizes?
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="sizzing4" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                           Our Apparel are True to Size fit. (TTS) 
+    
+                          </div>
+                      </div>
+                  </li>
+    
+                 </ul>
+        </div>
+    
+    
+    
+        <div id="QUALITYTAB" class="col-sm-12" tabindex="1" style="display: none;">
+            <ul id="accordion" class="col-sm-6 col-md-12 list-unstyled">
+    
+                  <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#quality1" aria-expanded="false" aria-controls="quality1">
+                          What is the material, of the Fabric used, to make the Apparel?
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="quality1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                            We use a dry-fit, moisture wicking, breathable 100% Polyester fabric. Mostly the uniforms have a inter-lock mesh fabric for durability and there is Spandex (Lycra fabric) around the neck and shoulders for flexibility.  The Fabrics uses to construct the uniforms come with a general weight 120 - 280GSM depending on the sport and apparel even this can be changed to fit in your custom requirement and needs.
+                            <br> <br>
+                            For clients who are looking to buy 100% Cotton uniforms again we are the best choice to order from. 
+    
+                          </div>
+                      </div>
+                  </li>
+    
+                 </ul>
+        </div>
+
+
+    
+        <div id="ORDERTAB" class="col-sm-12" tabindex="1" style="display: none;">
+            <ul id="accordion" class="col-sm-6 col-md-12 list-unstyled">
+    
+                  <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#order1" aria-expanded="false" aria-controls="order1">
+                         What are our Order Policies?
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="order1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                            Check our Order Policies <b><a target="_blank" href="https://www.spotonapparel.com/order-policies">Here.</a></b>
+                          </div>
+                      </div>
+                  </li>
+    
+    
+                  <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#order2" aria-expanded="false" aria-controls="order2">
+                         What are our Return Policies?
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="order2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                            Check our Return Policies <b><a target="_blank" href="https://www.spotonapparel.com/order-policies#return-policy">Here.</a></b>
+                          </div>
+                      </div>
+                  </li>
+    
+    
+                  <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#order3" aria-expanded="false" aria-controls="order3">
+                         Do we give any Guaranties for the Turnaround timeline/ deliveries?
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="order3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                           Check our Guaranties for the Turnaround timeline/ deliveries <b><a target="_blank" href="https://www.spotonapparel.com/order-policies#turnaround-time">Here.</a></b>
+                          </div>
+                      </div>
+                  </li>
+    
+    
+                  <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#order4" aria-expanded="false" aria-controls="order4">
+                          How to Track Order Online?
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="order4" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                            You Can Track Order <b><a target="_blank" href="https://www.spotonapparel.com/orders#turnaround-time">Here.</a></b>
+                          </div>
+                      </div>
+                  </li>
+    
+                 </ul>
+        </div>
+    
+    
+
+             <div id="COMMONTAB" class="col-sm-12" tabindex="1" style="display: none;">
+            <ul id="accordion" class="col-sm-6 col-md-12 list-unstyled">
+    
+                  <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                          The most common Issues/ Errors that can happen when buying from us.
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                           <ol>
+                               <li>Color shade or the Design, comes to be different than what was expected: We start manufacturing your order only after you have seen and approved the Sample Paper Print of your order. This eliminates this error to a considerable large extent but still exists in a miniscule percentage.</li> <br> <br>
+                               <li>Sizing comes off:  <br>Sizing Kits are shipped against a pre-paid but refundable amount on return. However, if our measuring charts and our measurement guide is followed to the T, you may not need a sizing kit. Yet for any more help in sizing players you can reach out to our: Pattern Designer Support: 346-444-2737 / V.P. ops :  346-444-2599</li> <br> <br>
+                               <li>If the uniforms sent; still do not match our own specs, for the item/(s) ordered, then SpotOn apparel will redo and re-ship the order free of cost at our Priority Production option.</li> <br> <br>
+                               <li>Player Names / Numbers were mixed or misspelled: If the Mistake happened at the Factory then we shall redo and ship the defective item/order, free of cost at our Priority Production option.</li> <br> <br>
+                           </ol>
+                        
+                          </div>
+                      </div>
+                  </li>
+    
+            </ul>
+        </div>
+    
+
+    
+        <div id="CONTACTUSTAB" class="col-sm-12" tabindex="1" style="display: none;">
+            <ul id="accordion" class="col-sm-6 col-md-12 list-unstyled">
+    
+                  <li>
+                      <div class="collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                         How to reach your Customer Service / Sales Rep?
+                          <span class="fa fa-chevron-down fa-1x text-info pull-right" aria-hidden="true"></span>
+                      </div>
+                      <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                           <ul style="padding-left: 10px;">
+                               <li><b>24/7 Online chat.</b></li>
+                               <li><b>24/7 Telephone : As follows:</b> 
+                                   <ol style="padding-left: 30px; padding-top: 10px; padding-bottom: 10px; ">
+                                       <li><b>Sales Line                  :</b> (346) 444-2679</li>
+                                       <li><b>Customer Support            :</b> (346) 444-2737</li>
+                                   
+                                       <li><b>V.P. Operations &amp; Sales     :</b> (346) 444-2599 (Mon-Sat: 9am - 3pm EST) </li>
+                                   </ol>
+                               </li>
+                           </ul>
+                            <h5>(We encourage clients to speak with the V.P Ops for any matter they don’t want to discuss with anyone other than the highest working Officer, in our Organization.)</h5>
+                          </div>
+                      </div>
+                  </li>
+    
+                 </ul>
+        </div>
+
+    </div>
+  
+    
+<script type="text/javascript">
+	$("#GENERALTAB").hide();
+	$("#ABOUTUSTAB").hide();
+	$("#PRICINGSTAB").hide();
+	$("#SIZINGTAB").hide();
+	$("#QUALITYTAB").hide();
+	$("#ORDERTAB").hide();
+	$("#CONTACTUSTAB").hide();
+    $("#COMMONTAB").hide();
+
+
+$("#GENERAL").on('click',function(){
+$("#GENERALTAB").toggle();
+$("#GENERALTAB").focus();
+
+	$("#ABOUTUSTAB").hide();
+	$("#PRICINGSTAB").hide();
+	$("#SIZINGTAB").hide();
+	$("#QUALITYTAB").hide();
+	$("#ORDERTAB").hide();
+	$("#CONTACTUSTAB").hide();
+    $("#COMMONTAB").hide();
+});
+
+$("#ABOUTUS").on('click',function(){
+$("#ABOUTUSTAB").toggle();
+$("#ABOUTUSTAB").focus();
+$("#GENERALTAB").hide();
+
+	$("#PRICINGSTAB").hide();
+	$("#SIZINGTAB").hide();
+	$("#QUALITYTAB").hide();
+	$("#ORDERTAB").hide();
+	$("#CONTACTUSTAB").hide();
+    $("#COMMONTAB").hide();
+});
+
+$("#PRICINGS").on('click',function(){
+$("#PRICINGSTAB").toggle();
+$("#PRICINGSTAB").focus();
+$("#GENERALTAB").hide();
+	$("#ABOUTUSTAB").hide();
+	$("#SIZINGTAB").hide();
+	$("#QUALITYTAB").hide();
+	$("#ORDERTAB").hide();
+	$("#CONTACTUSTAB").hide();
+    $("#COMMONTAB").hide();
+});
+
+$("#SIZING").on('click',function(){
+$("#SIZINGTAB").toggle();
+$("#SIZINGTAB").focus();
+$("#GENERALTAB").hide();
+	$("#ABOUTUSTAB").hide();
+	$("#PRICINGSTAB").hide();
+	$("#QUALITYTAB").hide();
+	$("#ORDERTAB").hide();
+	$("#CONTACTUSTAB").hide();
+    $("#COMMONTAB").hide();
+});
+
+$("#QUALITY").on('click',function(){
+$("#QUALITYTAB").toggle();
+$("#QUALITYTAB").focus();
+$("#GENERALTAB").hide();
+	$("#ABOUTUSTAB").hide();
+	$("#PRICINGSTAB").hide();
+	$("#SIZINGTAB").hide();
+	$("#ORDERTAB").hide();
+	$("#CONTACTUSTAB").hide();
+    $("#COMMONTAB").hide();
+});
+
+
+$("#ORDER").on('click',function(){
+$("#ORDERTAB").toggle();
+$("#ORDERTAB").focus();
+$("#GENERALTAB").hide();
+	$("#ABOUTUSTAB").hide();
+	$("#PRICINGSTAB").hide();
+	$("#SIZINGTAB").hide();
+	$("#QUALITYTAB").hide();
+	$("#CONTACTUSTAB").hide();
+    $("#COMMONTAB").hide();
+});
+
+$("#COMMON").on('click',function(){
+$("#COMMONTAB").toggle();
+$("#COMMONTAB").focus();
+$("#GENERALTAB").hide();
+	$("#ABOUTUSTAB").hide();
+	$("#PRICINGSTAB").hide();
+	$("#SIZINGTAB").hide();
+	$("#QUALITYTAB").hide();
+	$("#ORDERTAB").hide();
+	$("#CONTACTUSTAB").hide();
+
+});
+
+$("#CONTACTUS").on('click',function(){
+$("#CONTACTUSTAB").toggle();
+$("#CONTACTUSTAB").focus();
+$("#GENERALTAB").hide();
+	$("#ABOUTUSTAB").hide();
+	$("#PRICINGSTAB").hide();
+	$("#SIZINGTAB").hide();
+	$("#QUALITYTAB").hide();
+	$("#ORDERTAB").hide();
+
+    $("#COMMONTAB").hide();
+});
+
+  $(function(){
+    $("div[data-toggle=collapse]").click(function(){
+        $(this).children('span').toggleClass("fa-chevron-down fa-chevron-up");
+    });
+})
+</script>
+</body>
+</html>

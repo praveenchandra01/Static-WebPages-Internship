@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/57c416f0a3.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Why SpotOn Apparel</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Barlow Condensed", sans-serif;
+        box-sizing: border-box;
+      }
+      .background__img {
+        width: 100%;
+        position: relative;
+      }
+      .background__img > img {
+        margin-top: 20rem;
+        width: 100%;
+        position: absolute;
+      }
+      .hero__content {
+        width: 100%;
+        margin: auto;
+        position: relative;
+      }
+      .img__container {
+        width: 90%;
+        margin: 3rem auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .img__container img {
+        width: 100%;
+        object-fit: cover;
+      }
+      .img__container > .heading {
+        position: absolute;
+        z-index: 20;
+      }
+      .img__container .heading {
+        width: 35%;
+        margin: auto;
+        text-align: left;
+        color: white;
+        position: absolute;
+        top: 42%;
+        left: 24%;
+        transform: translate(-50%, -50%);
+      }
+      .heading > h1 {
+        font-size: 11vw;
+      }
+      /* /////////////////////////////// */
+      .main__section {
+        width: 90%;
+        margin: auto;
+      }
+      .row__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 2rem 0;
+      }
+      .row__container > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        max-height: 500px;
+      }
+      .row__content {
+        text-align: left;
+        padding: 3rem;
+      }
+      .row__content > h1 {
+        font-size: 6vw;
+      }
+      .row__content > p {
+        font-size: 2.2vw;
+      }
+      .row_2 {
+        padding: 5rem 3rem 1rem 0rem;
+      }
+      @media only screen and (max-width: 600px) {
+        .row__content {
+          text-align: left;
+          padding: 1rem;
+        }
+        .row__content > p {
+          font-size: 3vw;
+        }
+      }
+      /* ////////////////////////// */
+      .feature__table {
+        width: 90%;
+        margin: 3rem auto;
+      }
+      .feature__table > h1 {
+        font-size: 6vw;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border-radius: 9px;
+        position: relative;
+        overflow: hidden;
+        margin: 2rem auto;
+        box-shadow: 0px 4px 14px 1px rgb(0 0 0 / 17%);
+      }
+      tr {
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr 1fr;
+        min-height: 80px;
+        height: fit-content;
+        place-items: left;
+      }
+
+      .table__head {
+        background-color: black;
+        color: white;
+      }
+      tr.table__head {
+        place-items: center;
+        text-align: center;
+      }
+      table tr td:nth-child(2) {
+        display: grid;
+        place-items: center;
+      }
+      .table__head > th {
+        font-weight: 300;
+        font-size: 1.5rem;
+      }
+
+      td {
+        margin: 5px;
+        padding: 1rem;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      .fa-check-circle {
+        color: rgb(7, 58, 168);
+        font-size: 2rem;
+        padding-right: 1rem;
+      }
+
+      .fa-times-circle {
+        color: red;
+        font-size: 2rem;
+        padding-right: 1rem;
+      }
+      @media only screen and (max-width: 600px) {
+        th,
+        td {
+          padding: 5px;
+          font-size: 1rem;
+        }
+        .table__head > th {
+          font-size: 1rem;
+        }
+        .fa {
+          padding-right: 5px;
+        }
+      }
+      /* ////////////////////////////////// */
+      .middle__section {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        background-color: black;
+      }
+      .middle__section > img {
+        width: 100%;
+        height: 85%;
+        object-fit: cover;
+        margin: 5rem 0;
+      }
+      .middle__content {
+        background-color: black;
+        color: white;
+        padding: 2rem;
+        text-align: center;
+      }
+      .middle__content > h5 {
+        font-size: 2rem;
+        padding-bottom: 1rem;
+      }
+      @media only screen and (max-width: 800px) {
+        .middle__section {
+          grid-template-columns: 1fr;
+        }
+        .middle__section > img {
+          max-height: 400px;
+        }
+      }
+      @media only screen and (max-width: 500px) {
+        .middle__content > h5 {
+          font-size: 1.5rem;
+        }
+      }
+      @media only screen and (max-width: 440px) {
+        .middle__content > h5 {
+          font-size: 1.2rem;
+        }
+      }
+
+      /* /////////////////////////////// */
+
+      .bottom__setion {
+        width: 90%;
+        margin: 4rem auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .bottom__setion > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      @media only screen and (max-width: 700px) {
+        .bottom__setion {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media only screen and (max-width: 440px) {
+        .bottom__setion > h6 {
+          font-size: 1.3rem;
+        }
+      }
+      /* ////////////////////////////////////// */
+
+      .ventures {
+        width: 100%;
+        background-color: #030e19;
+        color: white;
+        padding: 3rem;
+      }
+      .ventures h1 {
+        font-size: 4rem;
+        text-align: center;
+      }
+      .ventures p {
+        font-size: 20px;
+        text-align: center;
+        font-weight: lighter;
+      }
+      .cards {
+        width: 100%;
+        margin: 3rem auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+      .card {
+        height: 200px;
+        width: 350px;
+        background-color: #212529;
+        color: #ffc013;
+        margin: 10px 10px;
+        text-align: center;
+        box-shadow: 0px 4px 14px 1px rgb(0 0 0 / 17%);
+      }
+      .card img {
+        padding: 2rem;
+      }
+
+      /* ///////////////////////////// */
+
+      .getintouch {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        padding: 2rem;
+      }
+      .getintouch input {
+        margin: 4rem auto;
+        width: 100%;
+        height: 50px;
+        border: none;
+        outline: none;
+        box-shadow: 0px 4px 14px 1px rgb(0 0 0 / 17%);
+        border-radius: 37px;
+        padding-left: 15px;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <div class="background__img">
+      <img src="./img/1 – 2.png" alt="background" />
+      <div class="hero__content">
+        <div class="img__container">
+          <img src="./img/dewang-gupta-r8q16QN40Xg-unsplash.jpg" alt="main" />
+          <div class="heading">
+            <h1>Why Spot On Apparel?</h1>
+          </div>
+        </div>
+        <!--  -->
+        <div class="main__section">
+          <div class="row__container">
+            <img
+              src="./img/giuseppe-argenziano-lTTQ1W_vvSI-unsplash.jpg"
+              alt=""
+            />
+            <div class="row__content">
+              <h1>Our Aim</h1>
+              <p>
+                Our Aim is not to "Revolutionized" anything or any idustry! But
+                to Just Provide you pro-quality sports Apparel at the lowest
+                prices.
+              </p>
+            </div>
+          </div>
+          <div class="row__container">
+            <div class="row__content row_2">
+              <h1>Our Goal</h1>
+              <p>
+                To fulfil your requirement of Customized Sports Apparel timely
+                and in design and quality that can best be done only by two
+                Sports Fanatics who are Successful Fashin Designer.
+              </p>
+            </div>
+            <img
+              src="./img/malcolm-lightbody-jW2CpfyQo7o-unsplash.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <div class="feature__table">
+      <h1>Why buy from Spot On Apparel ?</h1>
+
+      <table>
+        <tr class="table__head">
+          <th>Issues</th>
+          <th>Other Apparel Companies</th>
+          <th>Why SpontOn Apparel</th>
+        </tr>
+        <tr>
+          <td>Free custom Mock-ups</td>
+          <td><i class="fa fa-check-circle"></i></td>
+          <td><i class="fa fa-check-circle"></i></td>
+        </tr>
+        <tr>
+          <td>Quick / Quotes & Mock-ups</td>
+          <td><i class="fas fa-times-circle"></i></td>
+          <td><i class="fa fa-check-circle"></i> Max 48 hours</td>
+        </tr>
+        <tr>
+          <td>Help with colors varitaion</td>
+          <td><i class="fas fa-times-circle"></i></td>
+          <td>
+            <i class="fa fa-check-circle"></i>You Approve Sample Paper Print
+            beforehand. Order platform.
+          </td>
+        </tr>
+        <tr>
+          <td>Help with Distorted / Blurred Designs</td>
+          <td><i class="fas fa-times-circle"></i></td>
+          <td>
+            <i class="fa fa-check-circle"></i>Redo's get treated as Priority,
+            with No extra charge.
+          </td>
+        </tr>
+        <tr>
+          <td>Low Budget customers</td>
+          <td><i class="fa fa-check-circle"></i></td>
+          <td>
+            <i class="fa fa-check-circle"></i>
+            We have a supply chain to beat any price / fit in the smallest of
+            budgets.
+          </td>
+        </tr>
+        <tr>
+          <td>Help with Sizing Issues</td>
+          <td><i class="fas fa-times-circle"></i></td>
+          <td>
+            <i class="fa fa-check-circle"></i>We rarely go wrong if we do then
+            Redo shipped on Priority.
+          </td>
+        </tr>
+        <tr>
+          <td>Guranteed Turn Around</td>
+          <td><i class="fas fa-times-circle"></i></td>
+          <td>
+            <i class="fa fa-check-circle"></i>Guaranteed Turn Around Timeline
+          </td>
+        </tr>
+        <tr>
+          <td>Product R & D</td>
+          <td><i class="fas fa-times-circle"></i></td>
+          <td>
+            <i class="fa fa-check-circle"></i>The founders are two Fashion
+            Designers with a Hugely Successful Fashionwear chain in Asia.
+          </td>
+        </tr>
+        <tr>
+          <td>After Sales Customer Service</td>
+          <td><i class="fas fa-times-circle"></i></td>
+          <td>
+            <i class="fa fa-check-circle"></i>Nothing to run From with a
+            Guaranteed Delivery.
+          </td>
+        </tr>
+        <tr>
+          <td>Free Samples</td>
+          <td><i class="fa fa-check-circle"></i></td>
+          <td>
+            <i class="fa fa-check-circle"></i>We provide samples which match
+            specs.
+          </td>
+        </tr>
+        <tr>
+          <td>True Sizing Kits</td>
+          <td><i class="fas fa-times-circle"></i></td>
+          <td>
+            <i class="fa fa-check-circle"></i>Rarely needed but are Refundable
+            Upon Return.
+          </td>
+        </tr>
+        <tr>
+          <td>Transparency in doing Business</td>
+          <td><i class="fas fa-times-circle"></i></td>
+          <td>
+            <i class="fa fa-check-circle"></i>Transparent to the core ( Our
+            Order-Delivery flow process page is proof enough).
+          </td>
+        </tr>
+        <tr>
+          <td>Manufactrers as Partners not Vendors</td>
+          <td><i class="fas fa-times-circle"></i></td>
+          <td>
+            <i class="fa fa-check-circle"></i>We have “Partnered” with
+            Manufacturers in Asia and are transparent about it.
+          </td>
+        </tr>
+        <tr>
+          <td>One time Profiteering</td>
+          <td><i class="fa fa-check-circle"></i></td>
+          <td>
+            <i class="fas fa-times-circle"></i>We know a returning client is the
+            only way a business can prosper.
+          </td>
+        </tr>
+        <tr>
+          <td>Conflict Management</td>
+          <td><i class="fas fa-times-circle"></i></td>
+          <td>
+            <i class="fa fa-check-circle"></i>Only one Target : The customer
+            should be Happy.
+          </td>
+        </tr>
+        <tr>
+          <td>Real Reviews</td>
+          <td><i class="fas fa-times-circle"></i></td>
+          <td>
+            <i class="fa fa-check-circle"></i>We do not edit / hide negative
+            reviews.
+          </td>
+        </tr>
+        <tr>
+          <td>Ethical Business Policies</td>
+          <td><i class="fas fa-times-circle"></i></td>
+          <td>
+            <i class="fa fa-check-circle"></i>We choose not to accept an order
+            if we cannot make/ deliver in your time frame.
+          </td>
+        </tr>
+        <tr>
+          <td>Minimum Quantity Required</td>
+          <td><i class="fa fa-check-circle"></i></td>
+          <td>
+            <i class="fas fa-times-circle"></i>You are welcome to order even 1
+            pc.
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!--  -->
+    <div class="middle__section">
+      <img
+        id="left__img"
+        src="./img/nik-shuliahin-BWRyS1-KKrs-unsplash.jpg"
+        alt=""
+      />
+      <div class="middle__content">
+        <h5>
+          Let us " Dress Your Attitude" with a Great design and Quality at
+          "Unbelievably Low" prices, since our apparel come to you ( at your
+          doorsteps) direct from our Factories.
+        </h5>
+
+        <h5>
+          Apart from rigidly sticking to timelines, and the promises of great
+          Quality n Designs made, The Founders being Moms themselves understands
+          this “Financial Pinch” and so has decided to offer special sponsorship
+          to all schools and college teams where it is invariably, always the
+          parents, who have to bear the costs of their wards participating.
+          SpotOn Apparel will do Its Social-bit and offer special sponsorship
+          packages depending on team strength to all those NGO`s / Fraternities,
+          who go through a painstaking process of collecting money to run
+          sporting activities for the underprivileged. SpotOn Apparel believes
+          in naming this favour as their obligation towards our society. In this
+          rapidly expanding sports apparel market in America, with more than
+          1000 companies selling customized sports apparel, we promise you the
+          very best. Taking up this challenge, SpotOn Apparel has put in a lot
+          of common sense and research, and the challenges have been met with
+          some great networking and In-depth knowledge, skills in terms of
+          creating a great pattern befitting the sport played.
+        </h5>
+      </div>
+      <img
+        id="right__img"
+        src="./img/channey-4pUmLUGDMEI-unsplash.jpg"
+        alt=""
+      />
+    </div>
+    <!--  -->
+    <div class="bottom__setion">
+      <img src="./img/pexels-mark-musni-3067870.jpg" alt="" />
+      <div class="bottom__content">
+        <div style="padding: 40px; border-radius: 4px">
+          <h3 style="color: #000000; font-size: 3rem">Our USP</h3>
+          <h6 style="color: #000000; font-size: 1.5rem">
+            Our Ten Commandments: <br /><br />
+            1) Guaranteed Delivery, Guaranteed Turnaround. We understand the
+            financial implications of a delayed delivery apart from the obvious
+            social and mental Implications of a team not getting their uniforms
+            in time to play their games.<br /><br />
+            2) Unbelievably Low prices.<br /><br />
+            3) 24*7 Sales and Support Services at your disposal. <br /><br />
+            4) Quality at par with the Topmost Brands. <br /><br />
+            5) Fully automated Ordering Platform with super easy UI.<br /><br />
+            6) Better Equipped to provide Apparel with No Sizing/ Design/ Color,
+            Issues coming up.<br /><br />
+            7) Transparent Business Policies, Ethical Business Practices are
+            followed, nothing is hidden.<br /><br />
+            8) We refuse to accept an Order in case we cannot keep the timelines
+            rather than accepting the and then not delivering in time just to
+            make money at the cost of your sporting activity.<br /><br />
+            9) SpotOn Apparel Operations is managed by a 15 year experienced
+            person in Customized Sports Apparel Industry. <br /><br />
+            10) One Belief: One Happy Customer may bring us one more but one
+            unhappy customer can stop 10 from giving us business.
+          </h6>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <!-- VENTURES -->
+    <div class="ventures">
+      <h1>Our Other Ventures</h1>
+      <p>
+        Besides Sports Apparel, Spot On Group forays into Fashion-wear, Free
+        Pharmaceutical Encyclopaedia Services, Global Offshoring of your
+        Business (B.P.O) and IT Services and BIM (Building Information
+        Management) services.
+      </p>
+      <div class="cards">
+        <div class="card card_one">
+          <img src="./img/bim.png" alt="" />
+          <h3>MEDIC AND PHARMA SERVICES</h3>
+        </div>
+        <div class="card two">
+          <img src="./img/bim.png" alt="" />
+          <h3>FASHION WEAR</h3>
+        </div>
+        <div class="card card_three">
+          <img src="./img/bim.png" alt="" />
+          <h3>GLOBAL IT & BPO SERVICES</h3>
+        </div>
+      </div>
+    </div>
+    <!-- VENTURES END -->
+
+    <!-- GET IN TOUCH -->
+    <div class="getintouch">
+      <h1>GET IN TOUCH</h1>
+      <h3>
+        Sign up for the news about our latest arrivals and get an exclusive
+        early access shopping. join 60,000+ subscribers and get a new discount
+        coupon on every Saturday
+      </h3>
+      <input type="email" placeholder="Enter your email here" />
+    </div>
+  </body>
+</html>

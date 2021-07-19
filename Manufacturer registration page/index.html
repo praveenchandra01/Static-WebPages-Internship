@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <title>Manufacturer registration</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Barlow Condensed", sans-serif;
+        box-sizing: border-box;
+      }
+      .background__img {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+      .background__img > img {
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+      }
+      .hero__content {
+        width: 100%;
+        margin: auto;
+        position: relative;
+      }
+      .img__container {
+        width: 90%;
+        /* max-height: 650px; */
+        margin: 3rem auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .img__container::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.61);
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        opacity: 0.5;
+        z-index: 1;
+      }
+      .img__container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .img__container .heading {
+        width: 80%;
+        height: 50%;
+        margin: auto;
+        text-align: center;
+        color: white;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .heading > h1 {
+        font-size: 6vw;
+      }
+      .heading > h4 {
+        text-align: center;
+        width: 60%;
+        font-size: 2.2vw;
+        margin: auto;
+        font-weight: 200;
+      }
+      .top__btn {
+        width: 25vw;
+        margin: auto;
+        border: none;
+        padding: 1%;
+        font-size: 1.5vw;
+        cursor: pointer;
+        outline: none;
+        background: white;
+        color: black;
+        font-weight: bold;
+        transition: all 0.2s ease-in-out;
+      }
+      .top__btn:hover {
+        background-color: rgb(241, 240, 240);
+      }
+      @media only screen and (max-width: 550px) {
+        .heading > h4 {
+          font-size: 2.5vw;
+        }
+      }
+      /* //////////////////////////////////////////// */
+      .form__heading {
+        width: 50%;
+        max-width: 700px;
+        margin: 2rem auto;
+        border: 1px solid rgb(175, 175, 175);
+        text-align: center;
+        padding: 1rem;
+      }
+      .form__heading h1 {
+        font-size: 4vw;
+      }
+      .form__text {
+        width: 70%;
+        max-width: 100%;
+        margin: 2rem auto;
+        text-align: center;
+      }
+      .form__text > h5 {
+        font-size: 2vw;
+      }
+      @media only screen and (max-width: 600px) {
+        .form__text > h5 {
+          font-size: 3vw;
+        }
+      }
+
+      /* //////////////////////// */
+      .form__section {
+        font-size: 20px;
+        position: relative;
+      }
+      .form__section input {
+        border-radius: 6px;
+        margin-bottom: 10px;
+        border: 1px solid #acafb3;
+      }
+      .form__section label {
+        color: rgb(0, 0, 0);
+      }
+
+      .form__section textarea {
+        border-radius: 10px;
+        resize: none;
+      }
+
+      .form-control:focus {
+        border: 1px solid grey;
+        border-color: rgb(153, 153, 153);
+        box-shadow: none;
+      }
+
+      .choose_btn {
+        width: 100%;
+        margin-bottom: 22px !important;
+      }
+
+      input[type="file"]::-webkit-file-upload-button {
+        background-color: rgb(51, 51, 51);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 3px 15px;
+        outline: none;
+        transition: all 0.5s ease-in-out;
+      }
+
+      input[type="file"]::-webkit-file-upload-button:hover {
+        background-color: rgb(10, 10, 10) !important;
+        color: white !important;
+      }
+
+      .bottom__content {
+        position: relative;
+      }
+
+      .button {
+        width: 350px;
+        font-size: 22px;
+        padding: 3px;
+        margin: 2rem auto;
+        border: none;
+        cursor: pointer;
+        background-color: rgba(24, 24, 24, 0.911);
+        outline: none;
+        color: white;
+        box-shadow: 2px 1px 11px 0px rgb(165 164 164 / 48%);
+        transition: all 0.5s;
+      }
+      .button:hover {
+        background-color: black;
+      }
+      @media only screen and (max-width: 520px) {
+        .button {
+          width: 300px;
+          font-size: 20px;
+          padding: 5px;
+          margin: 1rem auto;
+        }
+      }
+      @media only screen and (max-width: 420px) {
+        .button {
+          width: 225px;
+          font-size: 18px;
+          padding: 3px;
+          margin: 1rem auto;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="background__img">
+      <img src="./img/Group 34.png" alt="background" />
+      <div class="hero__content">
+        <div class="img__container">
+          <img src="./img/linda-mynhardt-5aDpgA9mofY-unsplash.jpg" alt="main" />
+          <div class="heading">
+            <h1>Spot On apparel</h1>
+            <h4>
+              Get the highest quality custom apparel on lowest prices and lowest
+              turnaround times
+            </h4>
+            <button class="top__btn">Get a free Design</button>
+          </div>
+        </div>
+
+        <div class="form__heading">
+          <h1>Manufacturer registration</h1>
+        </div>
+        <div class="form__text">
+          <h5>
+            If You Are A "Sports Apparel Manufacturer" With A Sublimation
+            Printing Set Up. Wr Are Waiting For Your E-mail To On-board You. As
+            Our, Partner-Manufacturer.
+          </h5>
+          <h5>
+            *Please Submit the form if you are only willing to give free Samples
+          </h5>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <div class="form__section form-group">
+      <form action="" class="w-75 m-auto" method="POST">
+        <div class="form-group">
+          <label for="company_name" class="form-label"
+            >Your Company Name *</label
+          >
+          <input
+            type="name"
+            id="company_name"
+            name="company_name"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="name" class="form-label">Your Full Name *</label>
+          <input type="name" id="name" name="name" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label for="email_address" class="form-label"
+            >Your Email Address *</label
+          >
+          <input
+            type="email"
+            id="email_address"
+            name="email_address"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="contact_number" class="form-label"
+            >Your Contact Number *</label
+          >
+          <input
+            type="tel"
+            id="contact_number"
+            name="contact_number"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="Whatsapp" class="form-label">Whatsapp Number</label>
+          <input
+            type="tel"
+            id="Whatsapp"
+            name="Whatsapp"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="SkypeId" class="form-label">Skype Id</label>
+          <input
+            type="email"
+            id="SkypeId"
+            name="SkypeId"
+            class="form-control"
+          />
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <label for="position" class="form-label"
+              >Your Position at Company *</label
+            >
+            <input
+              type="email"
+              id="position"
+              name="position"
+              class="form-control"
+            />
+          </div>
+
+          <div class="col-sm-6">
+            <label for="country" class="form-label">Your Country</label>
+            <input
+              type="email"
+              id="country"
+              name="country"
+              class="form-control"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="factory_add" class="form-label"
+            >Your Factory Address *</label
+          >
+          <input
+            type="text"
+            id="factory_add"
+            name="factory_add"
+            class="form-control"
+          />
+          <input
+            type="text"
+            id="factory_add"
+            name="factory_add"
+            class="form-control"
+          />
+          <input
+            type="text"
+            id="factory_add"
+            name="factory_add"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="correspondence_add" class="form-label"
+            >Your Correspondence Address *</label
+          >
+          <input
+            type="text"
+            id="correspondence_add"
+            name="correspondencey_add"
+            class="form-control"
+          />
+          <input
+            type="text"
+            id="correspondence_add"
+            name="correspondence_add"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="profile_background" class="form-label"
+            >Your Profile and Background *</label
+          >
+          <input
+            type="text"
+            id="profile_background"
+            name="profile_background"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="quantity" class="form-label"
+            >Your Last year Quantity Produced</label
+          >
+          <input
+            type="text"
+            id="quantity"
+            name="quantity"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="revenue" class="form-label"
+            >Your Last year Company Revenue</label
+          >
+          <input type="text" id="revenue" name="revenue" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label for="pricing" class="form-label">Your Website Links</label>
+          <div class="input">
+            <input
+              type="text"
+              id="pricing"
+              name="pricing"
+              class="form-control"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="best_product" class="form-label"
+            >Your Best Products Made (Attach documents if any.)*
+          </label>
+          <input
+            type="file"
+            id="best_product"
+            name="best_product"
+            class="choose_btn"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="pricing" class="form-label"
+            >Your Pricing (Attach documents if any.)*
+          </label>
+          <div class="input">
+            <input type="file" id="pricing" name="pricing" class="choose_btn" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="pricing" class="form-label"
+            >Your Turnarond Times and Minimums (Attach documents if any.)*
+          </label>
+          <div class="input">
+            <input type="file" id="pricing" name="pricing" class="choose_btn" />
+          </div>
+        </div>
+
+        <div class="bottom__content text-center mt-5">
+          <button type="submit" class="button">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

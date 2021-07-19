@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baseball & Soccer</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Barlow Condensed", sans-serif;
+        box-sizing: border-box;
+      }
+      .img__container {
+        position: relative;
+        width: 100%;
+        height: 510px;
+        color: rgb(255, 255, 255);
+        text-align: center;
+      }
+      .img__container::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.61);
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+        z-index: 1;
+      }
+      .main__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-size: auto;
+      }
+      .heading {
+        width: 70%;
+        font-size: 2rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+      }
+      .heading h1 {
+        font-size: 100px;
+      }
+
+      @media only screen and (max-width: 500px) {
+        .heading h1 {
+          font-size: 66px;
+        }
+      }
+      @media only screen and (max-width: 400px) {
+        .heading h1 {
+          font-size: 52px;
+        }
+        .heading h4 {
+          font-size: 28px;
+          font-weight: 100;
+        }
+      }
+
+      /* /////////////////////////////////////////// */
+
+      .middle__section {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 2fr 1.5fr 1fr;
+      }
+      .middle__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .middle__content {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .middle__content > h1 {
+        font-size: 3rem;
+        text-align: center;
+      }
+      .middle__content h3 {
+        text-align: center;
+      }
+      .middle__content__img {
+        width: 100%;
+        object-fit: cover;
+      }
+      .middle__content > p {
+        padding: 1rem 0;
+        width: 95%;
+        margin: auto;
+        text-align: center;
+        font-weight: 600;
+      }
+      @media only screen and (max-width: 755px) {
+        .middle__section {
+          grid-template-columns: 1.5fr;
+        }
+      }
+      /* ///////////////////////////////////////////////// */
+
+      /* Section 3 CSS */
+
+      /* ////////////////////////////////////////////////// */
+
+      .popular__design {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        padding: 2rem 0;
+      }
+      .popular__design {
+        text-align: center;
+        font-size: 2rem;
+      }
+
+      /* ////////////////////////////////////////////////// */
+
+      .ventures {
+        width: 100%;
+        background-color: #030e19;
+        color: white;
+        padding: 3rem;
+        text-align: center;
+      }
+      .ventures h1 {
+        font-size: 4rem;
+        text-align: center;
+      }
+      .ventures h4 {
+        /* font-size: 4rem; */
+        text-align: center;
+        font-weight: 300;
+      }
+      .cards {
+        width: 100%;
+        margin: 3rem auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+      .card {
+        height: 220px;
+        width: 370px;
+        background-color: #212529;
+        color: #ffc013;
+        border-radius: 5px;
+        margin: 10px 5px;
+        text-align: center;
+        box-shadow: 0px 4px 14px 1px rgb(0 0 0 / 17%);
+      }
+      .card img {
+        width: 350px;
+        padding: 2rem;
+      }
+      .card h3 {
+        font-size: 30px;
+      }
+      @media only screen and (max-width: 400px) {
+        .card {
+          width: 300px;
+        }
+        .card img {
+          width: 300px;
+          padding: 2rem;
+        }
+        .card h3 {
+          font-size: 25px;
+        }
+      }
+
+      .getintouch {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        padding: 2rem;
+      }
+      .getintouch input {
+        margin: 4rem auto;
+        width: 100%;
+        height: 50px;
+        border: none;
+        outline: none;
+        box-shadow: 0px 4px 14px 1px rgb(0 0 0 / 17%);
+        border-radius: 37px;
+        padding-left: 15px;
+      }
+
+      /* Remove this */
+      .categories_area_4 {
+        height: 500px;
+        padding-top: 3rem;
+      }
+      .popular__design {
+        height: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="img__container">
+      <img
+        class="main__img"
+        src="./img/alexander-schimmeck-FbDfTUXXut0-unsplash.jpg"
+        alt="BASEBALL AND SOFTBALL"
+      />
+      <div class="heading">
+        <h4>DESIGN</h4>
+        <h1>BASEBALL AND SOFTBALL</h1>
+      </div>
+    </div>
+
+    <div class="middle__section">
+      <img
+        class="middle__img"
+        src="./img/rachel-barkdoll-zoWzrCPCa5U-unsplash.jpg"
+        alt=""
+      />
+
+      <div class="middle__content">
+        <h1>CUSTOMISED BACKPACK</h1>
+        <p>
+          Sublimation Printing ensures every thread of your uniforms has your
+          own :
+        </p>
+
+        <img src="./img/Group 56.png" alt="" class="middle__content__img" />
+        <h3>Dress professionally for your games at ubelievably low prices!</h3>
+        <p>
+          Special Sponsoship for "Schools/College" Teams to inculcte the spirit
+          of "Competing professionally", at an early age!
+        </p>
+      </div>
+      <img
+        class="middle__img"
+        src="./img/eduardo-balderas-UVxd5b-_tw8-unsplash (1).jpg"
+        alt=""
+      />
+    </div>
+
+    <!-- 3 section -->
+    <div class="fetures_area_3 pt-80">
+      <div
+        class="categories_area_4 pt-200 mt-100 d-sm-block"
+        data-background="https://themepure.net/template/gota/gota/assets/img/slider/bgbox2.png"
+        style="
+          background-image: url('https://themepure.net/template/gota/gota/assets/img/slider/bgbox2.png');
+        "
+      >
+        <div class="container">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="text-center section-wrapper mb-35">
+              <h2 class="text-white section-title">SPOT ON APPAREL</h2>
+              <p class="text-white section-title">
+                Offers a Guaranteed Turn - Around time with 3 Options
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-5 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+              <div
+                class="fetures_3"
+                data-background="assets/img/std.png"
+                style="background-image: url('assets/img/std.png')"
+              >
+                <div class="pt-0 mt-0 fetures_3_body">
+                  <a href="https://spotonwebsite.netlify.app/shop.html"
+                    ><h2 class="mb-60">STANDARD</h2></a
+                  >
+                  <p>TRACK <span>14 DAYS</span><br />21 DAYS GUARANTEED</p>
+                </div>
+
+                <div class="fetures_3_footer"></div>
+              </div>
+            </div>
+
+            <div class="mb-5 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+              <div
+                class="fetures_3"
+                data-background="assets/img/rush.png"
+                style="background-image: url('assets/img/rush.png')"
+              >
+                <div class="fetures_3_body">
+                  <a href="https://spotonwebsite.netlify.app/shop.html"
+                    ><h2 class="mb-60">RUSH</h2></a
+                  >
+                  <p>TRACK <span>10 DAYS</span><br />14 DAYS GUARANTEED</p>
+                </div>
+                <div class="fetures_3_footer"></div>
+              </div>
+            </div>
+            <div class="mb-5 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+              <div
+                class="fetures_3"
+                data-background="assets/img/priority.png"
+                style="background-image: url('assets/img/priority.png')"
+              >
+                <div class="fetures_3_body">
+                  <a href="https://spotonwebsite.netlify.app/shop.html"
+                    ><h2 class="mb-60">PRIORITY</h2></a
+                  >
+                  <p>
+                    TRACK <span class="text-dark">5 DAYS</span><br />8 DAYS
+                    GUARANTEED
+                  </p>
+                </div>
+                <div class="fetures_3_footer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 3 ends -->
+    <div class="popular__design">
+      <h1>POPULAR DESIGN</h1>
+      <!-- /////////////////////////////////////////////////////
+      ///////////////////////////////////////////////////// -->
+    </div>
+
+    <!-- VENTURES -->
+    <div class="ventures">
+      <h1>Our Other Ventures</h1>
+      <h4>
+        Besides Sports Apparel, Spot On Group forays into Fashion-wear, Free
+        Pharmaceutical Encyclopaedia Services, Global Offshoring of your
+        Business (B.P.O) and IT Services and BIM (Building Information
+        Management) services.
+      </h4>
+      <div class="cards">
+        <div class="card card_one">
+          <img src="./img/bim.png" alt="" />
+          <h3>MEDIC AND PHARMA SERVICES</h3>
+        </div>
+        <div class="card two">
+          <img src="./img/bim.png" alt="" />
+          <h3>FASHION WEAR</h3>
+        </div>
+        <div class="card card_three">
+          <img src="./img/bim.png" alt="" />
+          <h3>GLOBAL IT & BPO SERVICES</h3>
+        </div>
+      </div>
+    </div>
+    <!-- VENTURES END -->
+
+    <!-- GET IN TOUCH -->
+    <div class="getintouch">
+      <h1>GET IN TOUCH</h1>
+      <h3>
+        Sign up for the news about our latest arrivals and get an exclusive
+        early access shopping. join 60,000+ subscribers and get a new discount
+        coupon on every Saturday
+      </h3>
+      <input type="email" placeholder="Enter your email here" />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <title>Shade Chart</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+      .img__container {
+        position: relative;
+        width: 90%;
+        margin: 3rem auto;
+        color: rgb(255, 255, 255);
+        text-align: center;
+      }
+      .img__container::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.61);
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.7;
+        z-index: 10;
+      }
+
+      .main__img {
+        width: 100%;
+        max-height: 650px;
+        object-fit: cover;
+        background-size: auto;
+      }
+      .heading {
+        width: 70%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 11;
+      }
+      .heading h1 {
+        font-size: 10vw;
+      }
+      /* ////////////////////////// */
+
+      .pdf__container {
+        width: 90%;
+        margin: 2rem auto;
+      }
+      embed {
+        width: 100%;
+        height: 600px;
+        margin: 0px auto;
+
+        /* margin: 2rem auto; */
+      }
+      .btn__div {
+        display: grid;
+        place-items: center;
+      }
+      .button {
+        width: 70vw;
+        max-width: 350px;
+        font-size: 22px;
+        padding: 5px;
+        margin: 2rem auto;
+        border: none;
+        cursor: pointer;
+        background-color: rgba(24, 24, 24, 0.911);
+        outline: none;
+        box-shadow: 2px 1px 11px 0px rgb(165 164 164 / 48%);
+        transition: all 0.5s;
+      }
+      .button > a {
+        color: white;
+        text-decoration: none;
+      }
+      .button:hover {
+        background-color: black;
+      }
+
+      /* /////////////////////////////// */
+
+      hr {
+        width: 90%;
+        margin: auto;
+      }
+      .bottom__section {
+        width: 90%;
+        margin: 2rem auto;
+      }
+      .para {
+        text-align: center;
+        font-size: 1.2rem;
+      }
+      .bottom__heading p > a {
+        color: #55a4dc;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .bottom__section > img {
+        width: 100%;
+        object-fit: cover;
+        padding: 2rem 0;
+      }
+      .para_pad {
+        padding-bottom: 30px;
+      }
+      .bottom__img {
+        display: grid;
+        place-content: center;
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img__container">
+      <img
+        class="main__img"
+        src="./img/mika-baumeister-PtabTe6iJ_8-unsplash.jpg"
+        alt="Order to Delivery"
+      />
+      <div class="heading">
+        <h1>Shade Chart</h1>
+      </div>
+    </div>
+    <div class="pdf__container">
+      <embed src="./data/Color_shades.pdf" type="application/pdf" />
+
+      <div class="btn__div">
+        <button class="button">
+          <a href="./data/Color_shades.pdf" download>
+            Download Color Shades PDF</a
+          >
+        </button>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="bottom__section">
+      <div class="bottom__heading">
+        <p class="para para_pad" >
+          Pantone colors are universal standard that is used by all printers.
+          You can download our
+          <a
+            href="https://vector-conversions.com/vector/pantone_color_swatchbook.pdf"
+            target="_blank"
+            >Pantone Color Swatch Book PDF</a
+          >
+          or use the
+          <a href="https://www.pantone.com/color-finder" target="_blank"
+            >Pantone Color Website</a
+          >
+          to choose the exact colors you want for your uniforms or apparel.
+        </p>
+
+        <p class="para para_pad" >
+          Here is an example of what Pantone color codes look like:
+        </p>
+      </div>
+      <img
+        src="./img/pantone+color+codes,+example+of+pantone+color+swatch.png"
+        alt=""
+      />
+      <p class="para para_pad">
+        If you were looking for a deep bright orange for your uniform color, you
+        would select PANTONE 7413 C, pictured below:
+      </p>
+      <div class="bottom__img">
+        <img src="./img/Pantone+7413+C+Solid.png" alt="" />
+      </div>
+      <p class="para">
+        We're always here for you. If you have any questions about your colors
+        or your order, just let us know
+      </p>
+    </div>
+  </body>
+</html>
